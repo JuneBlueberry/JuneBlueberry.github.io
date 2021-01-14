@@ -7,8 +7,8 @@ navname: JuneBlueberry's Blog
 # navigatior items
 nav:
   posts: /archives
-  categories: /category
-  tags: /tag
+  categories: /categories
+  tags: /tags
   about: /about
 
 # favicon
