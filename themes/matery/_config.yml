@@ -42,10 +42,10 @@ menu:
 # Website start time.
 # 站点运行开始时间.
 time:
-  enable: false
-  year: 2019 # 年份
-  month: 06 # 月份
-  date: 28 # 日期
+  enable: true
+  year: 2021 # 年份
+  month: 01 # 月份
+  date: 01 # 日期
   hour: 00 # 小时
   minute: 00 # 分钟
   second: 00 # 秒
@@ -160,7 +160,7 @@ code:
 
 # 是否激活文章末尾的打赏功能，默认激活（你替换为的你自己的微信、支付宝二维码图片、或者使用网络图片也可以）.
 reward:
-  enable: true
+  enable: false
   title: 你的赏识是我前进的动力
   wechat: /medias/reward/wechat.png
   alipay: /medias/reward/alipay.jpg
@@ -169,7 +169,7 @@ reward:
 # minCharNumber: Approve copyright information by copying at least how many characters.
 # 是否激活复制文章时追加博客和作者的版权信息.
 copyright:
-  enable: false
+  enable: true
   minCharNumber: 120 # 至少复制多少个字符就追加版权信息.
   description: 本文章著作权归作者所有，任何形式的转载都请注明出处。
 
@@ -284,7 +284,7 @@ gitalk:
 # the Gitment config，default disabled
 # Gitment 评论模块的配置，默认为不激活
 gitment:
-  enable: true
+  enable: false
   owner:
   repo:
   oauth:
