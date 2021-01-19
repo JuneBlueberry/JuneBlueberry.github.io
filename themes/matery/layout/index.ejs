@@ -17,6 +17,10 @@
                         <%- partial('_widget/dream') %>
                     <% } %>
 
+                    <% if (theme.notice.enable) { %>
+                        <%- partial('_widget/notice') %>
+                    <% } %>
+
                     <% if (theme.music.enable && !theme.music.fixed) { %>
                         <%- partial('_widget/music') %>
                         <% } %>
