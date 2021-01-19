@@ -701,7 +701,8 @@ header .go-back i {
 
 .dream .title,
 .music-player .title,
-.video-player .title {
+.video-player .title,
+.notice .title {
     margin-bottom: 20px;
     font-size: 2rem;
     font-weight: 700;
@@ -710,6 +711,21 @@ header .go-back i {
 .dream .text {
     opacity: .6;
     font-size: 1.1rem;
+}
+
+.notice {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.notice .notice-title {
+    font-size: 20px;
+    margin-right: 10px;
+    font-weight: 500;
+}
+.notice .notice-date {
+    font-weight: 700;
+    opacity: .6;
 }
 
 .music-player,
