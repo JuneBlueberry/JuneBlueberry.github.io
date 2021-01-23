@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, JuneBlueberry&#39;s Blog">
+    <meta name="keywords" content="手写Promise ES6 Promise">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | JuneBlueberry&#39;s Blog</title>
+    <title>手写Promise(1)--实现基础架构 | JuneBlueberry&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -266,12 +266,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">手写Promise(1)--实现基础架构</h1>
                 </div>
             </div>
         </div>
@@ -387,8 +387,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                                <span class="chip bg-color">字符串</span>
+                            <a href="/tags/Promise/">
+                                <span class="chip bg-color">Promise</span>
                             </a>
                         
                     </div>
@@ -399,8 +399,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%B5%8B%E8%AF%95/" class="post-category">
-                                测试
+                            <a href="/categories/ES6/" class="post-category">
+                                ES6
                             </a>
                         
                     </div>
@@ -412,28 +412,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-01-21
+                    2021-01-23
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-01-21
+                    2021-01-23
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    73
+                    873
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -456,15 +456,140 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <h3 id="1-Promise介绍"><a href="#1-Promise介绍" class="headerlink" title="1.Promise介绍"></a>1.Promise介绍</h3><p> Promise是一种解决异步编程回调函数的方案。最早由社区提供和实现，在ES2015中将其写入标准语法中，提供原生的对象。<br> Promise对象更像一个容器，将需要进行的操作（通常是异步操作）放入其中，其总结有以下几个特点：  </p>
+<ul>
+<li><p>Promise有三种状态：pending（进行中）、fulfilled（已成功）和rejected（已失败），且不受外界影响</p>
+</li>
+<li><p>Promise对象的状态单向的，只能从 pending =&gt; fulfilled 活着从 pending =&gt; rejected，且一旦变化就不可再改变</p>
+<blockquote>
+<p>关于Promise的详细介绍可以查看阮一峰的<a target="_blank" rel="noopener" href="https://es6.ruanyifeng.com/#docs/promise">ECMAScript 6 入门</a></p>
+</blockquote>
+</li>
+</ul>
+<h3 id="2-实现基础架构"><a href="#2-实现基础架构" class="headerlink" title="2.实现基础架构"></a>2.实现基础架构</h3><p>Promise对象的构造函数接受一个函数，且包含两个参数，同时Promise的原型上还有then函数</p>
+<ul>
+<li><p>resolve函数：将Promise对象的状态从pending变为fulfilled，在异步操作成功时调用，并将异步操作的结果，作为参数传递出去；</p>
+</li>
+<li><p>reject函数：将Promise对象的状态从pending变为rejected，在异步操作失败时调用，并将异步操作报出的错误，作为参数传递出去。</p>
+</li>
+<li><p>then函数：为 Promise 实例添加状态改变时的回调函数。then方法的第一个参数是resolved状态的回调函数，第二个参数是rejected状态的回调函数，它们都是可选的。</p>
+<p>了解以上，那么我们手写的Promise对象的基本结构就可以写出来了</p>
+</li>
+</ul>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">JunPromise</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">//构造函数</span>
+    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">execute</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token function">execute</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>resolve<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>reject<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">//状态 (pending-等待，fulfilled-完成，rejected-失败)</span>
+    status <span class="token operator">=</span> <span class="token string">'pending'</span>
+
+    <span class="token comment">//状态pending => fulfilled</span>
+    <span class="token function-variable function">resolve</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">//状态pending => rejected</span>
+    <span class="token function-variable function">reject</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">//then方法</span>
+    <span class="token function-variable function">then</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">resolveCallback<span class="token punctuation">,</span> rejectCallback</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+
+    <span class="token punctuation">&#125;</span>
+ <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-实现resolve-reject-函数"><a href="#3-实现resolve-reject-函数" class="headerlink" title="3.实现resolve(),reject()函数"></a>3.实现resolve(),reject()函数</h3><p>resolve()和reject()函数都会修改status的状态，同时其返回的结果会作为参数传递出去，在这里，我们用两个变量记录返回的结果</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">JunPromise</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">//构造函数</span>
+    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">execute</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token function">execute</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>resolve<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>reject<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">//状态 (pending-等待，fulfilled-完成，rejected-失败)</span>
+    status <span class="token operator">=</span> <span class="token string">'pending'</span>
+    <span class="token comment">//回调成功的值</span>
+    successMessage <span class="token operator">=</span> <span class="token keyword">undefined</span>
+    <span class="token comment">//回调失败的值</span>
+    failMessage <span class="token operator">=</span> <span class="token keyword">undefined</span>
+
+    <span class="token comment">//状态pending => fulfilled</span>
+    <span class="token function-variable function">resolve</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+		<span class="token comment">//状态已经一旦改变便不可逆</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>status <span class="token operator">!=</span> <span class="token string">'pending'</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>status <span class="token operator">=</span> <span class="token string">'fulfilled'</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>successMessage <span class="token operator">=</span> value
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">//状态pending => rejected</span>
+    <span class="token function-variable function">reject</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>status <span class="token operator">!=</span> <span class="token string">'pending'</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>status <span class="token operator">=</span> <span class="token string">'rejected'</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>failMessage <span class="token operator">=</span> value
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">//then方法</span>
+    <span class="token function-variable function">then</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">resolveCallback<span class="token punctuation">,</span> rejectCallback</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+
+    <span class="token punctuation">&#125;</span>
+ <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="4-then函数的初步实现"><a href="#4-then函数的初步实现" class="headerlink" title="4.then函数的初步实现"></a>4.then函数的初步实现</h3><p>then方法接受两个参数，的第一个参数是resolved状态的回调函数，第二个参数是rejected状态的回调函数，我们也用两个变量进行记录，并且then函数会根据当前状态进行不同的处理</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">JunPromise</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">//构造函数</span>
+    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">execute</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token function">execute</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>resolve<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>reject<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">//状态 (pending-等待，fulfilled-完成，rejected-失败)</span>
+    status <span class="token operator">=</span> <span class="token string">'pending'</span>
+    <span class="token comment">//回调成功的值</span>
+    successMessage <span class="token operator">=</span> <span class="token keyword">undefined</span>
+    <span class="token comment">//回调失败的值</span>
+    failMessage <span class="token operator">=</span> <span class="token keyword">undefined</span>
+
+    <span class="token comment">//状态pending => fulfilled</span>
+    <span class="token function-variable function">resolve</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">//状态已经一旦改变便不可逆</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>status <span class="token operator">!=</span> <span class="token string">'pending'</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>status <span class="token operator">=</span> <span class="token string">'fulfilled'</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>successMessage <span class="token operator">=</span> value
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">//状态pending => rejected</span>
+    <span class="token function-variable function">reject</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>status <span class="token operator">!=</span> <span class="token string">'pending'</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>status <span class="token operator">=</span> <span class="token string">'rejected'</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>failMessage <span class="token operator">=</span> value
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">//then方法</span>
+    <span class="token function-variable function">then</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">resolveCallback<span class="token punctuation">,</span> rejectCallback</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>status <span class="token operator">==</span> <span class="token string">'fulfilled'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token function">resolveCallback</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>successMessage<span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>status <span class="token operator">==</span> <span class="token string">'rejected'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token function">rejectCallback</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>failMessage<span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+ <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>接下来用个demo来测试一下</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> p0_1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JunPromise</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+	<span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'我是一个基础架构'</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+p0_1<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'p0_1:'</span><span class="token punctuation">,</span> value<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+
+<span class="token comment">///p0_1: 我是一个基础架构</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="5-总结"><a href="#5-总结" class="headerlink" title="5.总结"></a>5.总结</h3><p>以上，一个基本的Promise架构就实现了,最后附上本文<a target="_blank" rel="noopener" href="https://github.com/JuneBlueberry/blog-post-code/tree/master/%E6%89%8B%E5%86%99Promise">源码</a>的GIT链接，欢迎指错和讨论</p>
 
                 
             </div>
@@ -491,7 +616,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://juneblueberry.github.io/2021/01/21/hello-world/">http://juneblueberry.github.io/2021/01/21/hello-world/</a>
+                    <a href="http://juneblueberry.github.io/2021/01/23/ES6/%E6%89%8B%E5%86%99Promise/%E6%89%8B%E5%86%99Promise(1)--%E5%AE%9E%E7%8E%B0%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84/">http://juneblueberry.github.io/2021/01/23/ES6/%E6%89%8B%E5%86%99Promise/%E6%89%8B%E5%86%99Promise(1)--%E5%AE%9E%E7%8E%B0%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -529,8 +654,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                                    <span class="chip bg-color">字符串</span>
+                                <a href="/tags/Promise/">
+                                    <span class="chip bg-color">Promise</span>
                                 </a>
                             
                         </div>
@@ -579,13 +704,13 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2021/01/21/hello-world/">
+                <a href="/2021/01/23/ES6/%E6%89%8B%E5%86%99Promise/%E6%89%8B%E5%86%99Promise(1)--%E5%AE%9E%E7%8E%B0%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="手写Promise(1)--实现基础架构">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">手写Promise(1)--实现基础架构</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -596,14 +721,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-23
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%B5%8B%E8%AF%95/" class="post-category">
-                                    测试
+                            <a href="/categories/ES6/" class="post-category">
+                                    ES6
                                 </a>
                             
                             
@@ -614,8 +739,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                        <span class="chip bg-color">字符串</span>
+                    <a href="/tags/Promise/">
+                        <span class="chip bg-color">Promise</span>
                     </a>
                     
                 </div>
@@ -629,13 +754,13 @@
                 本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2021/01/21/hello-world/">
+                <a href="/2021/01/23/ES6/%E6%89%8B%E5%86%99Promise/%E6%89%8B%E5%86%99Promise(1)--%E5%AE%9E%E7%8E%B0%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="手写Promise(1)--实现基础架构">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">手写Promise(1)--实现基础架构</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -646,14 +771,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-23
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%B5%8B%E8%AF%95/" class="post-category">
-                                    测试
+                            <a href="/categories/ES6/" class="post-category">
+                                    ES6
                                 </a>
                             
                             
@@ -664,8 +789,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                        <span class="chip bg-color">字符串</span>
+                    <a href="/tags/Promise/">
+                        <span class="chip bg-color">Promise</span>
                     </a>
                     
                 </div>
@@ -905,7 +1030,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">73</span>&nbsp;字
+                class="white-color">873</span>&nbsp;字
             
             
             
