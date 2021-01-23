@@ -648,5 +648,8 @@ notice:
   title: 文章预告
   postList:
     post1: 
-      title: 手动实现一个Promise.all()
-      date: 2021-01-24之前
+      title: 手写Promise(2)--实现then函数
+      date: 2021-02-01之前
+    post2: 
+      title: 手写Promise(3)--实现Promise.resolve()
+      date: 2021-02-01之前
