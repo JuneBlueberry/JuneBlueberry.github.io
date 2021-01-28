@@ -412,14 +412,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-01-23
+                    2021-01-28
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-01-23
+                    2021-01-28
                 </div>
                 
 
@@ -491,7 +491,7 @@
     <span class="token punctuation">&#125;</span>
 
     <span class="token comment">//状态pending => rejected</span>
-    <span class="token function-variable function">reject</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token function-variable function">reject</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">reason</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
 
     <span class="token punctuation">&#125;</span>
 
@@ -510,9 +510,9 @@
     <span class="token comment">//状态 (pending-等待，fulfilled-完成，rejected-失败)</span>
     status <span class="token operator">=</span> <span class="token string">'pending'</span>
     <span class="token comment">//回调成功的值</span>
-    successMessage <span class="token operator">=</span> <span class="token keyword">undefined</span>
+    value <span class="token operator">=</span> <span class="token keyword">undefined</span>
     <span class="token comment">//回调失败的值</span>
-    failMessage <span class="token operator">=</span> <span class="token keyword">undefined</span>
+    reason <span class="token operator">=</span> <span class="token keyword">undefined</span>
 
     <span class="token comment">//状态pending => fulfilled</span>
     <span class="token function-variable function">resolve</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
@@ -521,16 +521,16 @@
             <span class="token keyword">return</span>
         <span class="token punctuation">&#125;</span>
         <span class="token keyword">this</span><span class="token punctuation">.</span>status <span class="token operator">=</span> <span class="token string">'fulfilled'</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>successMessage <span class="token operator">=</span> value
+        <span class="token keyword">this</span><span class="token punctuation">.</span>value <span class="token operator">=</span> value
     <span class="token punctuation">&#125;</span>
 
     <span class="token comment">//状态pending => rejected</span>
-    <span class="token function-variable function">reject</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token function-variable function">reject</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">reason</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
         <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>status <span class="token operator">!=</span> <span class="token string">'pending'</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
             <span class="token keyword">return</span>
         <span class="token punctuation">&#125;</span>
         <span class="token keyword">this</span><span class="token punctuation">.</span>status <span class="token operator">=</span> <span class="token string">'rejected'</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>failMessage <span class="token operator">=</span> value
+        <span class="token keyword">this</span><span class="token punctuation">.</span>reason <span class="token operator">=</span> reason
     <span class="token punctuation">&#125;</span>
 
     <span class="token comment">//then方法</span>
@@ -548,9 +548,9 @@
     <span class="token comment">//状态 (pending-等待，fulfilled-完成，rejected-失败)</span>
     status <span class="token operator">=</span> <span class="token string">'pending'</span>
     <span class="token comment">//回调成功的值</span>
-    successMessage <span class="token operator">=</span> <span class="token keyword">undefined</span>
+    value <span class="token operator">=</span> <span class="token keyword">undefined</span>
     <span class="token comment">//回调失败的值</span>
-    failMessage <span class="token operator">=</span> <span class="token keyword">undefined</span>
+    reason <span class="token operator">=</span> <span class="token keyword">undefined</span>
 
     <span class="token comment">//状态pending => fulfilled</span>
     <span class="token function-variable function">resolve</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
@@ -559,24 +559,24 @@
             <span class="token keyword">return</span>
         <span class="token punctuation">&#125;</span>
         <span class="token keyword">this</span><span class="token punctuation">.</span>status <span class="token operator">=</span> <span class="token string">'fulfilled'</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>successMessage <span class="token operator">=</span> value
+        <span class="token keyword">this</span><span class="token punctuation">.</span>value <span class="token operator">=</span> value
     <span class="token punctuation">&#125;</span>
 
     <span class="token comment">//状态pending => rejected</span>
-    <span class="token function-variable function">reject</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token function-variable function">reject</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">reason</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
         <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>status <span class="token operator">!=</span> <span class="token string">'pending'</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
             <span class="token keyword">return</span>
         <span class="token punctuation">&#125;</span>
         <span class="token keyword">this</span><span class="token punctuation">.</span>status <span class="token operator">=</span> <span class="token string">'rejected'</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>failMessage <span class="token operator">=</span> value
+        <span class="token keyword">this</span><span class="token punctuation">.</span>reason <span class="token operator">=</span> reason
     <span class="token punctuation">&#125;</span>
 
     <span class="token comment">//then方法</span>
     <span class="token function-variable function">then</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">resolveCallback<span class="token punctuation">,</span> rejectCallback</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
         <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>status <span class="token operator">==</span> <span class="token string">'fulfilled'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            <span class="token function">resolveCallback</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>successMessage<span class="token punctuation">)</span>
+            <span class="token function">resolveCallback</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span>
         <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>status <span class="token operator">==</span> <span class="token string">'rejected'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            <span class="token function">rejectCallback</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>failMessage<span class="token punctuation">)</span>
+            <span class="token function">rejectCallback</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>reason<span class="token punctuation">)</span>
         <span class="token punctuation">&#125;</span>
     <span class="token punctuation">&#125;</span>
  <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -616,7 +616,7 @@ p0_1<span class="token punctuation">.</span><span class="token function">then</s
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://juneblueberry.github.io/2021/01/23/ES6/%E6%89%8B%E5%86%99Promise/%E6%89%8B%E5%86%99Promise(1)--%E5%AE%9E%E7%8E%B0%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84/">http://juneblueberry.github.io/2021/01/23/ES6/%E6%89%8B%E5%86%99Promise/%E6%89%8B%E5%86%99Promise(1)--%E5%AE%9E%E7%8E%B0%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84/</a>
+                    <a href="http://juneblueberry.github.io/2021/01/28/ES6/%E6%89%8B%E5%86%99Promise/%E6%89%8B%E5%86%99Promise(1)--%E5%AE%9E%E7%8E%B0%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84/">http://juneblueberry.github.io/2021/01/28/ES6/%E6%89%8B%E5%86%99Promise/%E6%89%8B%E5%86%99Promise(1)--%E5%AE%9E%E7%8E%B0%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -704,7 +704,7 @@ p0_1<span class="token punctuation">.</span><span class="token function">then</s
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2021/01/23/ES6/%E6%89%8B%E5%86%99Promise/%E6%89%8B%E5%86%99Promise(1)--%E5%AE%9E%E7%8E%B0%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84/">
+                <a href="/2021/01/28/ES6/%E6%89%8B%E5%86%99Promise/%E6%89%8B%E5%86%99Promise(1)--%E5%AE%9E%E7%8E%B0%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84/">
                     <div class="card-image">
                         
                         
@@ -721,7 +721,7 @@ p0_1<span class="token punctuation">.</span><span class="token function">then</s
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-28
                             </span>
                         <span class="publish-author">
                             
@@ -754,7 +754,7 @@ p0_1<span class="token punctuation">.</span><span class="token function">then</s
                 本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2021/01/23/ES6/%E6%89%8B%E5%86%99Promise/%E6%89%8B%E5%86%99Promise(1)--%E5%AE%9E%E7%8E%B0%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84/">
+                <a href="/2021/01/28/ES6/%E6%89%8B%E5%86%99Promise/%E6%89%8B%E5%86%99Promise(1)--%E5%AE%9E%E7%8E%B0%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84/">
                     <div class="card-image">
                         
                         
@@ -771,7 +771,7 @@ p0_1<span class="token punctuation">.</span><span class="token function">then</s
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-28
                             </span>
                         <span class="publish-author">
                             
