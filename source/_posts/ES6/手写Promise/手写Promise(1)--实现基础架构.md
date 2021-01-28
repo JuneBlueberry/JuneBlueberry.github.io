@@ -1,5 +1,6 @@
 ---
 title: 手写Promise(1)--实现基础架构
+date: 2021/1/23 17:00:00
 categories: 
 - ES6
 tags: 
