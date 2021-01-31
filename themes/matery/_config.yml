@@ -648,8 +648,14 @@ notice:
   title: 文章预告
   postList:
     post1: 
-      title: 手写Promise(2)--实现then函数
-      date: 2021-02-01之前
+      title: 手写Promise(3)--实现Promise.resolve()和Promise.reject()
+      date: 2021-02-03之前
     post2: 
-      title: 手写Promise(3)--实现Promise.resolve()
-      date: 2021-02-01之前
+      title: 手写Promise(4)--实现Promise.prototype.catch()和finally()
+      date: 2021-02-07之前
+    post3: 
+      title: 手写Promise(5)--实现Promise.all()和Promise.race()
+      date: 2021-02-11之前
+    post4: 
+      title: 手写Promise(6)--实现Promise.allSettled()和Promise.any()
+      date: 2021-02-11之前
