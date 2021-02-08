@@ -6,12 +6,10 @@ categories:
 tags: 
 - Promise
 comments: true
-top: true
+top: false
 cover: false
 keywords: 手写Promise ES6 Promise
 ---
-
-Promise 实例具有then方法，它的作用是为 Promise 实例添加状态改变时的回调函数。then有两个参数，第一个参数是resolved状态的回调函数，第二个参数是rejected状态的回调函数，并且它们都是可选的
 
 ### 1.Promise.resolve()
 
