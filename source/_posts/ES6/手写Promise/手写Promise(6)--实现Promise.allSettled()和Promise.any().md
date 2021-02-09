@@ -6,7 +6,7 @@ categories:
 tags: 
 - Promise
 comments: true
-top: true
+top: false
 cover: false
 keywords: 手写Promise ES6 Promise
 ---
