@@ -11,19 +11,19 @@ cover: false
 keywords: Vue Vue3 UI组件
 ---
 
-# 前言
+## 前言
 
 >  本文[GIT源码](https://github.com/JuneBlueberry/blog-post-code/tree/master/%E6%89%8B%E5%86%99Promise)
 
-# 一、创建项目
+## 一、创建项目
 
-## 1、环境准备
+### 1、环境准备
 首先需要准备Node和npm环境，大家可以自行百度搜索安装，版本不要太低即可，以下是笔者的版本：
 
 - node 14.10.0
 - npm 6.14.8
 
-## 2、安装脚手架
+### 2、安装脚手架
 脚手架这里选择最新版的vue-cli4，如果没有安装可以用以下命令先进行安装
 
 ```bash
@@ -38,7 +38,7 @@ npm install @vue/cli -g
 npm uninstall vue-cli -g
 ```
 
-## 3、初始化项目
+### 3、初始化项目
 使用脚手架命令创建一个新项目
 
 ```bash
@@ -48,7 +48,7 @@ npm create xxx
 选择第二项，创建Vue3的项目模板
 ![vue-cli创建新项目](https://img-blog.csdnimg.cn/20210227143855687.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0JsdWVCbHVlQmVycnk=,size_16,color_FFFFFF,t_70)
 
-## 4、配置Sass
+### 4、配置Sass
 CSS预处理器使用的Sass，如果不打算使用预处理可以跳过这一步。先安装node-sass和sass-loader这两个包
 
 > *注意：这里强烈建议大家不要安装最新版本
@@ -60,17 +60,17 @@ npm install --save node-sass@4.x
 npm install --save sass-loader@8.x
 ```
 
-# 二、架构搭建
-## 1、目录
+## 二、架构搭建
+### 1、目录
 对新创建的目录进行小修改，整理的目录如下
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210227154640547.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0JsdWVCbHVlQmVycnk=,size_16,color_FFFFFF,t_70)
 
-## 2、package
+### 2、package
 新建package文件夹，用来放所有的组件和组件样式。
 package文件夹下新建button文件夹用来存放button组件，新建styles文件夹用来存放所有的全局样式文件。具体实现下面来讲。
 例如这里我写了一个button的组件，具体代码可以[点击这里](https://github.com/JuneBlueberry/blog-post-code/tree/master/%E8%87%AA%E5%B7%B1%E5%8A%A8%E6%89%8B%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8EVue3%E7%9A%84UI%E7%BB%84%E4%BB%B6%E5%BA%93/cats-ui-demo)查看源码
 
-## 3、package/index.js
+### 3、package/index.js
 这个文件是一个入口文件，会整合所有的组件然后export出去。具体实现如下：
 
 ```javascript 
@@ -101,7 +101,7 @@ const API = {
 export default API
 ```
 
-## 4、vue.config.js
+### 4、vue.config.js
 在vue-cli3之后，vue的配置就放到vue.config.js这个文件中，并且项目创建时目录中没有这个文件，需要手动创建。
 
 ```javascript
@@ -131,11 +131,11 @@ module.exports = {
 }
 ```
 
-# 四、组件
+## 四、组件
 这里演示一个button组件的实现
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/2021030112013580.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0JsdWVCbHVlQmVycnk=,size_16,color_FFFFFF,t_70)
 
-## 1、组件编写
+### 1、组件编写
 - button/button.vue
 
 ```html
@@ -385,7 +385,7 @@ export {
 }
 ```
 
-## 2、全局样式编写
+### 2、全局样式编写
 styles文件夹里面负责入口样式和所有的全局样式，例如global，动画，函数等等。
 
 - styles/index.scss
@@ -428,7 +428,7 @@ table{
 }
 ```
 
-## 3、组件测试
+### 3、组件测试
 写好组件之后，我们来测试一下。修改一下项目入口文件src/main.js，将写好的UI组件引入。
 
 ```javascript
@@ -506,9 +506,9 @@ export default {
 最后，结果如下图
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210301143855502.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0JsdWVCbHVlQmVycnk=,size_16,color_FFFFFF,t_70)
 
-# 五、npm发布
+## 五、npm发布
 
-## 1、编译
+### 1、编译
 修改package.json文件，新增一个lib命令专门进行给组件库进行编译，同时，修改入口文件为编译后的压缩JS文件。
 
 >  lib是vue-cli3 里的一个专门用于打包组件库
@@ -537,7 +537,7 @@ npm run lib
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210301151241103.png)
 
 
-## 2、发布
+### 2、发布
 先在[npm官网](https://www.npmjs.com/)上注册一个账号，然后在控制台中进行登录和发布
 
 ```bash
@@ -552,7 +552,7 @@ npm publish
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210301152007480.png)
 
-## 3、测试
+### 3、测试
 最后测试一下所发布的组件库。由于同一个项目不可以安装同名的库，因此新建一个空的项目来测试。此处就省略建项的步骤，不太熟悉的同学可以看看第一步。
 
 ```bash
