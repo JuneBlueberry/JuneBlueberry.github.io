@@ -456,7 +456,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-Promise-all"><a href="#1-Promise-all" class="headerlink" title="1.Promise.all()"></a>1.Promise.all()</h3><p>Promise.all()方法用于将多个 Promise 实例，包装成一个新的 Promise 实例。如下示例：</p>
+                <h1 id="1-Promise-all"><a href="#1-Promise-all" class="headerlink" title="1.Promise.all()"></a>1.Promise.all()</h1><p>Promise.all()方法用于将多个 Promise 实例，包装成一个新的 Promise 实例。如下示例：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> p <span class="token operator">=</span> Promise<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token punctuation">[</span>p1<span class="token punctuation">,</span> p2<span class="token punctuation">,</span> p3<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Promise.all()方法有以下特点：</p>
 <ul>
@@ -492,7 +492,7 @@
 
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="2-Promise-race"><a href="#2-Promise-race" class="headerlink" title="2.Promise.race()"></a>2.Promise.race()</h3><p>Promise.race()方法同样是将多个 Promise 实例，包装成一个新的 Promise 实例。</p>
+<h1 id="2-Promise-race"><a href="#2-Promise-race" class="headerlink" title="2.Promise.race()"></a>2.Promise.race()</h1><p>Promise.race()方法同样是将多个 Promise 实例，包装成一个新的 Promise 实例。</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> p <span class="token operator">=</span> Promise<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token punctuation">[</span>p1<span class="token punctuation">,</span> p2<span class="token punctuation">,</span> p3<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>上面代码中，只要p1、p2、p3之中有一个实例率先改变状态，p的状态就跟着改变。那个率先改变的 Promise 实例的返回值，就传递给p的回调函数。</p>
 <blockquote>
@@ -518,7 +518,7 @@
     <span class="token punctuation">&#125;</span>
 	<span class="token operator">...</span>
  <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="3-总结"><a href="#3-总结" class="headerlink" title="3.总结"></a>3.总结</h3><p>附上本文<a target="_blank" rel="noopener" href="https://github.com/JuneBlueberry/blog-post-code/tree/master/%E6%89%8B%E5%86%99Promise">源码</a>的GIT链接，欢迎指错和讨论</p>
+<h1 id="3-总结"><a href="#3-总结" class="headerlink" title="3.总结"></a>3.总结</h1><p>附上本文<a target="_blank" rel="noopener" href="https://github.com/JuneBlueberry/blog-post-code/tree/master/%E6%89%8B%E5%86%99Promise">源码</a>的GIT链接，欢迎指错和讨论</p>
 
                 
             </div>
@@ -811,8 +811,8 @@
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('3'),
+            headingSelector: 'h1, h2, h3'
         });
 
         // modify the toc link href to support Chinese.
@@ -824,7 +824,7 @@
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 

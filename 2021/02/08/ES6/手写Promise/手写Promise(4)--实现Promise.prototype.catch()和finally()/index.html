@@ -456,7 +456,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-Promise-prototype-catch"><a href="#1-Promise-prototype-catch" class="headerlink" title="1.Promise.prototype.catch()"></a>1.Promise.prototype.catch()</h3><p>Promise.prototype.catch()方法是.then(null, rejection)或.then(undefined, rejection)的别名，用于指定发生错误时的回调函数。<br>因此，catch函数只是then函数的语法糖而已，所以实现起来也非常的简单，只有一行代码：</p>
+                <h1 id="1-Promise-prototype-catch"><a href="#1-Promise-prototype-catch" class="headerlink" title="1.Promise.prototype.catch()"></a>1.Promise.prototype.catch()</h1><p>Promise.prototype.catch()方法是.then(null, rejection)或.then(undefined, rejection)的别名，用于指定发生错误时的回调函数。<br>因此，catch函数只是then函数的语法糖而已，所以实现起来也非常的简单，只有一行代码：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">JunPromise</span> <span class="token punctuation">&#123;</span>
 
 	<span class="token operator">...</span>
@@ -468,7 +468,7 @@
 
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="2-Promise-prototype-finally"><a href="#2-Promise-prototype-finally" class="headerlink" title="2.Promise.prototype.finally()"></a>2.Promise.prototype.finally()</h3><p>Promise.prototype.finally()方法用于指定不管 Promise 对象最后状态如何，都会执行的操作。该方法是 ES2018 引入标准的。<br>语法有点像try-catch-finally，实际上finally方法是then方法的特例，因此返回的也是一个Promise对象，并且finally方法里面的内容与Promise的对象无关，实现如下：</p>
+<h1 id="2-Promise-prototype-finally"><a href="#2-Promise-prototype-finally" class="headerlink" title="2.Promise.prototype.finally()"></a>2.Promise.prototype.finally()</h1><p>Promise.prototype.finally()方法用于指定不管 Promise 对象最后状态如何，都会执行的操作。该方法是 ES2018 引入标准的。<br>语法有点像try-catch-finally，实际上finally方法是then方法的特例，因此返回的也是一个Promise对象，并且finally方法里面的内容与Promise的对象无关，实现如下：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">JunPromise</span> <span class="token punctuation">&#123;</span>
 	<span class="token operator">...</span>
     <span class="token comment">//finally</span>
@@ -492,7 +492,7 @@
     <span class="token punctuation">&#125;</span>
 	<span class="token operator">...</span>
  <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="3-总结"><a href="#3-总结" class="headerlink" title="3.总结"></a>3.总结</h3><p>附上本文<a target="_blank" rel="noopener" href="https://github.com/JuneBlueberry/blog-post-code/tree/master/%E6%89%8B%E5%86%99Promise">源码</a>的GIT链接，欢迎指错和讨论</p>
+<h1 id="3-总结"><a href="#3-总结" class="headerlink" title="3.总结"></a>3.总结</h1><p>附上本文<a target="_blank" rel="noopener" href="https://github.com/JuneBlueberry/blog-post-code/tree/master/%E6%89%8B%E5%86%99Promise">源码</a>的GIT链接，欢迎指错和讨论</p>
 
                 
             </div>
@@ -785,8 +785,8 @@
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('3'),
+            headingSelector: 'h1, h2, h3'
         });
 
         // modify the toc link href to support Chinese.
@@ -798,7 +798,7 @@
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 

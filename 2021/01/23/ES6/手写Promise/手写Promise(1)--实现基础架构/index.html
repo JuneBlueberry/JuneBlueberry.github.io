@@ -456,7 +456,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-Promise介绍"><a href="#1-Promise介绍" class="headerlink" title="1.Promise介绍"></a>1.Promise介绍</h3><p> Promise是一种解决异步编程回调函数的方案。最早由社区提供和实现，在ES2015中将其写入标准语法中，提供原生的对象。<br> Promise对象更像一个容器，将需要进行的操作（通常是异步操作）放入其中，其总结有以下几个特点：  </p>
+                <h1 id="1-Promise介绍"><a href="#1-Promise介绍" class="headerlink" title="1.Promise介绍"></a>1.Promise介绍</h1><p> Promise是一种解决异步编程回调函数的方案。最早由社区提供和实现，在ES2015中将其写入标准语法中，提供原生的对象。<br> Promise对象更像一个容器，将需要进行的操作（通常是异步操作）放入其中，其总结有以下几个特点：  </p>
 <ul>
 <li><p>Promise有三种状态：pending（进行中）、fulfilled（已成功）和rejected（已失败），且不受外界影响</p>
 </li>
@@ -466,7 +466,7 @@
 </blockquote>
 </li>
 </ul>
-<h3 id="2-实现基础架构"><a href="#2-实现基础架构" class="headerlink" title="2.实现基础架构"></a>2.实现基础架构</h3><p>Promise对象的构造函数接受一个函数，且包含两个参数，同时Promise的原型上还有then函数</p>
+<h1 id="2-实现基础架构"><a href="#2-实现基础架构" class="headerlink" title="2.实现基础架构"></a>2.实现基础架构</h1><p>Promise对象的构造函数接受一个函数，且包含两个参数，同时Promise的原型上还有then函数</p>
 <ul>
 <li><p>resolve函数：将Promise对象的状态从pending变为fulfilled，在异步操作成功时调用，并将异步操作的结果，作为参数传递出去；</p>
 </li>
@@ -500,7 +500,7 @@
 
     <span class="token punctuation">&#125;</span>
  <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="3-实现resolve-reject-函数"><a href="#3-实现resolve-reject-函数" class="headerlink" title="3.实现resolve(),reject()函数"></a>3.实现resolve(),reject()函数</h3><p>resolve()和reject()函数都会修改status的状态，同时其返回的结果会作为参数传递出去，在这里，我们用两个变量记录返回的结果</p>
+<h1 id="3-实现resolve-reject-函数"><a href="#3-实现resolve-reject-函数" class="headerlink" title="3.实现resolve(),reject()函数"></a>3.实现resolve(),reject()函数</h1><p>resolve()和reject()函数都会修改status的状态，同时其返回的结果会作为参数传递出去，在这里，我们用两个变量记录返回的结果</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">JunPromise</span> <span class="token punctuation">&#123;</span>
     <span class="token comment">//构造函数</span>
     <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">execute</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
@@ -538,7 +538,7 @@
 
     <span class="token punctuation">&#125;</span>
  <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="4-then函数的初步实现"><a href="#4-then函数的初步实现" class="headerlink" title="4.then函数的初步实现"></a>4.then函数的初步实现</h3><p>then方法接受两个参数，的第一个参数是resolved状态的回调函数，第二个参数是rejected状态的回调函数，我们也用两个变量进行记录，并且then函数会根据当前状态进行不同的处理</p>
+<h1 id="4-then函数的初步实现"><a href="#4-then函数的初步实现" class="headerlink" title="4.then函数的初步实现"></a>4.then函数的初步实现</h1><p>then方法接受两个参数，的第一个参数是resolved状态的回调函数，第二个参数是rejected状态的回调函数，我们也用两个变量进行记录，并且then函数会根据当前状态进行不同的处理</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">JunPromise</span> <span class="token punctuation">&#123;</span>
     <span class="token comment">//构造函数</span>
     <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">execute</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
@@ -589,7 +589,7 @@ p0_1<span class="token punctuation">.</span><span class="token function">then</s
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
 
 <span class="token comment">///p0_1: 我是一个基础架构</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="5-总结"><a href="#5-总结" class="headerlink" title="5.总结"></a>5.总结</h3><p>以上，一个基本的Promise架构就实现了,最后附上本文<a target="_blank" rel="noopener" href="https://github.com/JuneBlueberry/blog-post-code/tree/master/%E6%89%8B%E5%86%99Promise">源码</a>的GIT链接，欢迎指错和讨论</p>
+<h1 id="5-总结"><a href="#5-总结" class="headerlink" title="5.总结"></a>5.总结</h1><p>以上，一个基本的Promise架构就实现了,最后附上本文<a target="_blank" rel="noopener" href="https://github.com/JuneBlueberry/blog-post-code/tree/master/%E6%89%8B%E5%86%99Promise">源码</a>的GIT链接，欢迎指错和讨论</p>
 
                 
             </div>
@@ -883,8 +883,8 @@ p0_1<span class="token punctuation">.</span><span class="token function">then</s
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('3'),
+            headingSelector: 'h1, h2, h3'
         });
 
         // modify the toc link href to support Chinese.
@@ -896,7 +896,7 @@ p0_1<span class="token punctuation">.</span><span class="token function">then</s
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 

@@ -456,7 +456,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-Promise-allSettled"><a href="#1-Promise-allSettled" class="headerlink" title="1.Promise.allSettled()"></a>1.Promise.allSettled()</h3><p>Promise.allSettled()方法接受一组 Promise 实例作为参数，包装成一个新的 Promise 实例。特点如下：</p>
+                <h1 id="1-Promise-allSettled"><a href="#1-Promise-allSettled" class="headerlink" title="1.Promise.allSettled()"></a>1.Promise.allSettled()</h1><p>Promise.allSettled()方法接受一组 Promise 实例作为参数，包装成一个新的 Promise 实例。特点如下：</p>
 <ul>
 <li>只有等到所有参数实例都返回结果，不管是fulfilled还是rejected，包装实例才会结束。</li>
 <li>包装实例一旦结束，状态总是fulfilled，不会变成rejected</li>
@@ -490,7 +490,7 @@
 
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="2-Promise-any"><a href="#2-Promise-any" class="headerlink" title="2.Promise.any()"></a>2.Promise.any()</h3><p>Promise.any()方法接受一组 Promise 实例作为参数，包装成一个新的 Promise 实例返回，特点如下：</p>
+<h1 id="2-Promise-any"><a href="#2-Promise-any" class="headerlink" title="2.Promise.any()"></a>2.Promise.any()</h1><p>Promise.any()方法接受一组 Promise 实例作为参数，包装成一个新的 Promise 实例返回，特点如下：</p>
 <ul>
 <li>只要参数实例有一个变成fulfilled状态，包装实例就会变成fulfilled状态，并返回首个fulfilled状态对象的成功值</li>
 <li>如果所有参数实例都变成rejected状态，包装实例就会变成rejected状态。并返回包含所有rejected状态实例对象的数组</li>
@@ -534,7 +534,7 @@
     <span class="token punctuation">&#125;</span>
 	<span class="token operator">...</span>
  <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="3-总结"><a href="#3-总结" class="headerlink" title="3.总结"></a>3.总结</h3><p>附上本文<a target="_blank" rel="noopener" href="https://github.com/JuneBlueberry/blog-post-code/tree/master/%E6%89%8B%E5%86%99Promise">源码</a>的GIT链接，欢迎指错和讨论</p>
+<h1 id="3-总结"><a href="#3-总结" class="headerlink" title="3.总结"></a>3.总结</h1><p>附上本文<a target="_blank" rel="noopener" href="https://github.com/JuneBlueberry/blog-post-code/tree/master/%E6%89%8B%E5%86%99Promise">源码</a>的GIT链接，欢迎指错和讨论</p>
 
                 
             </div>
@@ -827,8 +827,8 @@
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('3'),
+            headingSelector: 'h1, h2, h3'
         });
 
         // modify the toc link href to support Chinese.
@@ -840,7 +840,7 @@
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 

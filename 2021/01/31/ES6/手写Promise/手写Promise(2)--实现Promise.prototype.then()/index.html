@@ -457,7 +457,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>Promise 实例具有then方法，它的作用是为 Promise 实例添加状态改变时的回调函数。then有两个参数，第一个参数是resolved状态的回调函数，第二个参数是rejected状态的回调函数，并且它们都是可选的</p>
-<h3 id="1-then的异步调用"><a href="#1-then的异步调用" class="headerlink" title="1.then的异步调用"></a>1.then的异步调用</h3><p>在第一节中，then已经可以直接调用，但是如果传入的是一个异步操作，则无法满足需求，如下事例：</p>
+<h1 id="1-then的异步调用"><a href="#1-then的异步调用" class="headerlink" title="1.then的异步调用"></a>1.then的异步调用</h1><p>在第一节中，then已经可以直接调用，但是如果传入的是一个异步操作，则无法满足需求，如下事例：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JunPromise</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
 	<span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
 		<span class="token function">resolve</span><span class="token punctuation">(</span><span class="token number">111</span><span class="token punctuation">)</span>
@@ -524,7 +524,7 @@ p<span class="token punctuation">.</span><span class="token function">then</span
         <span class="token punctuation">&#125;</span>
     <span class="token punctuation">&#125;</span>
  <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="2-多个then调用"><a href="#2-多个then调用" class="headerlink" title="2.多个then调用"></a>2.多个then调用</h3><p>then函数可以多次重复调用，前面讲过 Promise的状态一旦确认，就不可以变化。因此多次调用then函数得到的结果也是一样。<br>修改记录then回调参数为数组，当调用then方法状态为pending时，则压入记录回调数组中。</p>
+<h1 id="2-多个then调用"><a href="#2-多个then调用" class="headerlink" title="2.多个then调用"></a>2.多个then调用</h1><p>then函数可以多次重复调用，前面讲过 Promise的状态一旦确认，就不可以变化。因此多次调用then函数得到的结果也是一样。<br>修改记录then回调参数为数组，当调用then方法状态为pending时，则压入记录回调数组中。</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">JunPromise</span> <span class="token punctuation">&#123;</span>
     <span class="token comment">//构造函数</span>
     <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">execute</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
@@ -595,7 +595,7 @@ p<span class="token punctuation">.</span><span class="token function">then</span
         <span class="token punctuation">&#125;</span>
     <span class="token punctuation">&#125;</span>
  <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="3-then的链式调用"><a href="#3-then的链式调用" class="headerlink" title="3.then的链式调用"></a>3.then的链式调用</h3><p>实际上调用then方法得到的返回是一个Promise对象，因此then方法是允许链式调用。这也是使用Promise一个很大的优势，使用链式调用可以解决多层异步嵌套的回调地狱。<br>修改then方法，用Promise对象进行封装，当前then方法的返回值当成下一个then方法的入参。</p>
+<h1 id="3-then的链式调用"><a href="#3-then的链式调用" class="headerlink" title="3.then的链式调用"></a>3.then的链式调用</h1><p>实际上调用then方法得到的返回是一个Promise对象，因此then方法是允许链式调用。这也是使用Promise一个很大的优势，使用链式调用可以解决多层异步嵌套的回调地狱。<br>修改then方法，用Promise对象进行封装，当前then方法的返回值当成下一个then方法的入参。</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">...</span>
 <span class="token comment">//then方法</span>
 <span class="token function-variable function">then</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">resolveCallback<span class="token punctuation">,</span> rejectCallback</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
@@ -628,7 +628,7 @@ p<span class="token punctuation">.</span><span class="token function">then</span
     <span class="token keyword">return</span> _promise
 <span class="token punctuation">&#125;</span>
 <span class="token operator">...</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="4-then返回的Promise不可以是自身"><a href="#4-then返回的Promise不可以是自身" class="headerlink" title="4.then返回的Promise不可以是自身"></a>4.then返回的Promise不可以是自身</h3><p>then方法返回的Promise对象，是不允许为自身。因此新增 judgmentPromise 方法进行判断then方法的返回值</p>
+<h1 id="4-then返回的Promise不可以是自身"><a href="#4-then返回的Promise不可以是自身" class="headerlink" title="4.then返回的Promise不可以是自身"></a>4.then返回的Promise不可以是自身</h1><p>then方法返回的Promise对象，是不允许为自身。因此新增 judgmentPromise 方法进行判断then方法的返回值</p>
 <ul>
 <li>如果是自己，则报错</li>
 <li>如果是常数，则直接返回resolve(常数)</li>
@@ -696,7 +696,7 @@ p<span class="token punctuation">.</span><span class="token function">then</span
     <span class="token punctuation">&#125;</span>
  <span class="token punctuation">&#125;</span>
 <span class="token operator">...</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="5-then的参数可选"><a href="#5-then的参数可选" class="headerlink" title="5.then的参数可选"></a>5.then的参数可选</h3><p>then方法的两个参数都是可选参数，如果没有传入，则当前的状态会传下下一个then方法。</p>
+<h1 id="5-then的参数可选"><a href="#5-then的参数可选" class="headerlink" title="5.then的参数可选"></a>5.then的参数可选</h1><p>then方法的两个参数都是可选参数，如果没有传入，则当前的状态会传下下一个then方法。</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">...</span>
 <span class="token comment">//then方法</span>
 <span class="token function-variable function">then</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">resolveCallback<span class="token punctuation">,</span> rejectCallback</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
@@ -744,7 +744,7 @@ p<span class="token punctuation">.</span><span class="token function">then</span
     <span class="token keyword">return</span> _promise
 <span class="token punctuation">&#125;</span>
 <span class="token operator">...</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="6-加入try-catch"><a href="#6-加入try-catch" class="headerlink" title="6.加入try,catch"></a>6.加入try,catch</h3><p>最后，将then方法里面加上try-catch，一旦出错了就调用reject回调方法</p>
+<h1 id="6-加入try-catch"><a href="#6-加入try-catch" class="headerlink" title="6.加入try,catch"></a>6.加入try,catch</h1><p>最后，将then方法里面加上try-catch，一旦出错了就调用reject回调方法</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//then方法</span>
 <span class="token function-variable function">then</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">resolveCallback<span class="token punctuation">,</span> rejectCallback</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
     <span class="token comment">//判断then方法是否有回调</span>
@@ -806,7 +806,7 @@ p<span class="token punctuation">.</span><span class="token function">then</span
         <span class="token keyword">return</span> _promise
 <span class="token punctuation">&#125;</span>
 <span class="token operator">...</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="7-总结"><a href="#7-总结" class="headerlink" title="7.总结"></a>7.总结</h3><p>以上 Promise.prototype.then() 完成，附上本文<a target="_blank" rel="noopener" href="https://github.com/JuneBlueberry/blog-post-code/tree/master/%E6%89%8B%E5%86%99Promise">源码</a>的GIT链接，欢迎指错和讨论</p>
+<h1 id="7-总结"><a href="#7-总结" class="headerlink" title="7.总结"></a>7.总结</h1><p>以上 Promise.prototype.then() 完成，附上本文<a target="_blank" rel="noopener" href="https://github.com/JuneBlueberry/blog-post-code/tree/master/%E6%89%8B%E5%86%99Promise">源码</a>的GIT链接，欢迎指错和讨论</p>
 
                 
             </div>
@@ -1099,8 +1099,8 @@ p<span class="token punctuation">.</span><span class="token function">then</span
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('3'),
+            headingSelector: 'h1, h2, h3'
         });
 
         // modify the toc link href to support Chinese.
@@ -1112,7 +1112,7 @@ p<span class="token punctuation">.</span><span class="token function">then</span
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 

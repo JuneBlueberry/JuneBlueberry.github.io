@@ -456,7 +456,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-Promise-resolve"><a href="#1-Promise-resolve" class="headerlink" title="1.Promise.resolve()"></a>1.Promise.resolve()</h3><p>Promise对象有resolve静态方法，可以将现有对象转为 Promise 对象，会根据传入的参数不同做不同的处理</p>
+                <h1 id="1-Promise-resolve"><a href="#1-Promise-resolve" class="headerlink" title="1.Promise.resolve()"></a>1.Promise.resolve()</h1><p>Promise对象有resolve静态方法，可以将现有对象转为 Promise 对象，会根据传入的参数不同做不同的处理</p>
 <ul>
 <li>参数是 Promise 实例，将不做任何修改、原封不动地返回这个实例。</li>
 <li>参数是一个thenable(具有then方法的对象)对象，将返回一个Promise对象，并立即执行then函数</li>
@@ -481,7 +481,7 @@
 	<span class="token operator">...</span>
 
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="2-Promise-reject"><a href="#2-Promise-reject" class="headerlink" title="2.Promise.reject()"></a>2.Promise.reject()</h3><p>Promise.reject(reason)方法也会返回一个新的 Promise 实例，该实例的状态为rejected。</p>
+<h1 id="2-Promise-reject"><a href="#2-Promise-reject" class="headerlink" title="2.Promise.reject()"></a>2.Promise.reject()</h1><p>Promise.reject(reason)方法也会返回一个新的 Promise 实例，该实例的状态为rejected。</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">JunPromise</span> <span class="token punctuation">&#123;</span>
 	<span class="token operator">...</span>
 	<span class="token comment">//reject方法</span>
@@ -490,7 +490,7 @@
     <span class="token punctuation">&#125;</span>
 	<span class="token operator">...</span>
  <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="3-总结"><a href="#3-总结" class="headerlink" title="3.总结"></a>3.总结</h3><p>附上本文<a target="_blank" rel="noopener" href="https://github.com/JuneBlueberry/blog-post-code/tree/master/%E6%89%8B%E5%86%99Promise">源码</a>的GIT链接，欢迎指错和讨论</p>
+<h1 id="3-总结"><a href="#3-总结" class="headerlink" title="3.总结"></a>3.总结</h1><p>附上本文<a target="_blank" rel="noopener" href="https://github.com/JuneBlueberry/blog-post-code/tree/master/%E6%89%8B%E5%86%99Promise">源码</a>的GIT链接，欢迎指错和讨论</p>
 
                 
             </div>
@@ -783,8 +783,8 @@
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('3'),
+            headingSelector: 'h1, h2, h3'
         });
 
         // modify the toc link href to support Chinese.
@@ -796,7 +796,7 @@
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
