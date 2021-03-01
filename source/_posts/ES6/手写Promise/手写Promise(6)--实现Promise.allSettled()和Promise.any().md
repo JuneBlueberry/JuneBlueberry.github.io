@@ -11,7 +11,7 @@ cover: false
 keywords: 手写Promise ES6 Promise
 ---
 
-### 1.Promise.allSettled()
+# 1.Promise.allSettled()
 
 Promise.allSettled()方法接受一组 Promise 实例作为参数，包装成一个新的 Promise 实例。特点如下：
 
@@ -50,7 +50,7 @@ class JunPromise {
 ```
 
 
-### 2.Promise.any()
+# 2.Promise.any()
 
 Promise.any()方法接受一组 Promise 实例作为参数，包装成一个新的 Promise 实例返回，特点如下：
 
@@ -99,5 +99,5 @@ class JunPromise {
  }
 ```
 
-### 3.总结
+# 3.总结
 附上本文[源码](https://github.com/JuneBlueberry/blog-post-code/tree/master/%E6%89%8B%E5%86%99Promise)的GIT链接，欢迎指错和讨论

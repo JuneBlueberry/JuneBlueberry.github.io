@@ -11,7 +11,7 @@ cover: false
 keywords: 手写Promise ES6 Promise
 ---
 
-### 1.Promise.resolve()
+# 1.Promise.resolve()
 
 Promise对象有resolve静态方法，可以将现有对象转为 Promise 对象，会根据传入的参数不同做不同的处理
 - 参数是 Promise 实例，将不做任何修改、原封不动地返回这个实例。
@@ -40,7 +40,7 @@ class JunPromise {
 }
 ```
 
-### 2.Promise.reject()
+# 2.Promise.reject()
 
 Promise.reject(reason)方法也会返回一个新的 Promise 实例，该实例的状态为rejected。
 
@@ -55,5 +55,5 @@ class JunPromise {
  }
 ```
 
-### 3.总结
+# 3.总结
 附上本文[源码](https://github.com/JuneBlueberry/blog-post-code/tree/master/%E6%89%8B%E5%86%99Promise)的GIT链接，欢迎指错和讨论

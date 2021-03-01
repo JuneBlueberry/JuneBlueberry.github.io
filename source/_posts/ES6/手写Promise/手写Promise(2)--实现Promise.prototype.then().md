@@ -13,7 +13,7 @@ keywords: 手写Promise ES6 Promise
 
 Promise 实例具有then方法，它的作用是为 Promise 实例添加状态改变时的回调函数。then有两个参数，第一个参数是resolved状态的回调函数，第二个参数是rejected状态的回调函数，并且它们都是可选的
 
-### 1.then的异步调用
+# 1.then的异步调用
 
 在第一节中，then已经可以直接调用，但是如果传入的是一个异步操作，则无法满足需求，如下事例：
 
@@ -91,7 +91,7 @@ class JunPromise {
  }
 ```
 
-### 2.多个then调用
+# 2.多个then调用
 
 then函数可以多次重复调用，前面讲过 Promise的状态一旦确认，就不可以变化。因此多次调用then函数得到的结果也是一样。
 修改记录then回调参数为数组，当调用then方法状态为pending时，则压入记录回调数组中。
@@ -169,7 +169,7 @@ class JunPromise {
  }
 ```
 
-### 3.then的链式调用
+# 3.then的链式调用
 
 实际上调用then方法得到的返回是一个Promise对象，因此then方法是允许链式调用。这也是使用Promise一个很大的优势，使用链式调用可以解决多层异步嵌套的回调地狱。
 修改then方法，用Promise对象进行封装，当前then方法的返回值当成下一个then方法的入参。
@@ -209,7 +209,7 @@ then = (resolveCallback, rejectCallback) => {
 ...
 ```
 
-### 4.then返回的Promise不可以是自身
+# 4.then返回的Promise不可以是自身
 
 then方法返回的Promise对象，是不允许为自身。因此新增 judgmentPromise 方法进行判断then方法的返回值
 - 如果是自己，则报错
@@ -282,7 +282,7 @@ then = (resolveCallback, rejectCallback) => {
 ...
 ```
 
-### 5.then的参数可选
+# 5.then的参数可选
 
 then方法的两个参数都是可选参数，如果没有传入，则当前的状态会传下下一个then方法。
 
@@ -336,7 +336,7 @@ then = (resolveCallback, rejectCallback) => {
 ...
 ```
 
-### 6.加入try,catch
+# 6.加入try,catch
 
 最后，将then方法里面加上try-catch，一旦出错了就调用reject回调方法
 
@@ -404,5 +404,5 @@ then = (resolveCallback, rejectCallback) => {
 ...
 ```
 
-### 7.总结
+# 7.总结
 以上 Promise.prototype.then() 完成，附上本文[源码](https://github.com/JuneBlueberry/blog-post-code/tree/master/%E6%89%8B%E5%86%99Promise)的GIT链接，欢迎指错和讨论

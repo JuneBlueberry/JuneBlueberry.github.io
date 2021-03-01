@@ -11,7 +11,7 @@ cover: false
 keywords: 手写Promise ES6 Promise
 ---
 
-### 1.Promise.all()
+# 1.Promise.all()
 
 Promise.all()方法用于将多个 Promise 实例，包装成一个新的 Promise 实例。如下示例：
 
@@ -55,7 +55,7 @@ class JunPromise {
 ```
 
 
-### 2.Promise.race()
+# 2.Promise.race()
 
 Promise.race()方法同样是将多个 Promise 实例，包装成一个新的 Promise 实例。
 
@@ -91,5 +91,5 @@ class JunPromise {
  }
 ```
 
-### 3.总结
+# 3.总结
 附上本文[源码](https://github.com/JuneBlueberry/blog-post-code/tree/master/%E6%89%8B%E5%86%99Promise)的GIT链接，欢迎指错和讨论
