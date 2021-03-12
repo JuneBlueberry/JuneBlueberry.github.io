@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="手写Promise ES6 Promise">
+    <meta name="keywords" content="面试题 刷题">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>手写Promise(4)--实现Promise.prototype.catch()和finally() | JuneBlueberry&#39;s Blog</title>
+    <title>前端面试题总结--2021年3月 | JuneBlueberry&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -266,12 +266,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">手写Promise(4)--实现Promise.prototype.catch()和finally()</h1>
+                    <h1 class="description center-align post-title">前端面试题总结--2021年3月</h1>
                 </div>
             </div>
         </div>
@@ -387,8 +387,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Promise/">
-                                <span class="chip bg-color">Promise</span>
+                            <a href="/tags/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/">
+                                <span class="chip bg-color">前端面试题</span>
                             </a>
                         
                     </div>
@@ -399,8 +399,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/ES6/" class="post-category">
-                                ES6
+                            <a href="/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/" class="post-category">
+                                面试题
                             </a>
                         
                     </div>
@@ -412,7 +412,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-02-08
+                    2021-03-12
                 </div>
                 
 
@@ -426,7 +426,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    259
+                    238
                 </div>
                 
 
@@ -456,44 +456,34 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="1-Promise-prototype-catch"><a href="#1-Promise-prototype-catch" class="headerlink" title="1.Promise.prototype.catch()"></a>1.Promise.prototype.catch()</h1><p>Promise.prototype.catch()方法是.then(null, rejection)或.then(undefined, rejection)的别名，用于指定发生错误时的回调函数。<br>因此，catch函数只是then函数的语法糖而已，所以实现起来也非常的简单，只有一行代码：</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">JunPromise</span> <span class="token punctuation">&#123;</span>
-
-	<span class="token operator">...</span>
-    <span class="token comment">//catch函数</span>
-    <span class="token function-variable function">catch</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">rejectCallback</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">undefined</span><span class="token punctuation">,</span> rejectCallback<span class="token punctuation">)</span>
-    <span class="token punctuation">&#125;</span>
-	<span class="token operator">...</span>
-
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h1 id="2-Promise-prototype-finally"><a href="#2-Promise-prototype-finally" class="headerlink" title="2.Promise.prototype.finally()"></a>2.Promise.prototype.finally()</h1><p>Promise.prototype.finally()方法用于指定不管 Promise 对象最后状态如何，都会执行的操作。该方法是 ES2018 引入标准的。<br>语法有点像try-catch-finally，实际上finally方法是then方法的特例，因此返回的也是一个Promise对象，并且finally方法里面的内容与Promise的对象无关，实现如下：</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">JunPromise</span> <span class="token punctuation">&#123;</span>
-	<span class="token operator">...</span>
-    <span class="token comment">//finally</span>
-    <span class="token function-variable function">finally</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">callback</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>
-            <span class="token parameter">value</span> <span class="token operator">=></span> <span class="token function">callback</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">,</span>
-            <span class="token parameter">reason</span> <span class="token operator">=></span> <span class="token function">callback</span><span class="token punctuation">(</span>reason<span class="token punctuation">)</span>
-        <span class="token punctuation">)</span>
-    <span class="token punctuation">&#125;</span>
-	<span class="token operator">...</span>
- <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>考虑到callback回调函数为Promise对象的情况，修改如下：</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">JunPromise</span> <span class="token punctuation">&#123;</span>
-	<span class="token operator">...</span>
-    <span class="token comment">//finally</span>
-    <span class="token function-variable function">finally</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">callback</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>
-            <span class="token parameter">value</span> <span class="token operator">=></span> JunPromise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token function">callback</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> value<span class="token punctuation">)</span><span class="token punctuation">,</span>
-            <span class="token parameter">reason</span> <span class="token operator">=></span> JunPromise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token function">callback</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span> <span class="token keyword">throw</span> reason <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-        <span class="token punctuation">)</span>
-    <span class="token punctuation">&#125;</span>
-	<span class="token operator">...</span>
- <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="3-总结"><a href="#3-总结" class="headerlink" title="3.总结"></a>3.总结</h1><p>附上本文<a target="_blank" rel="noopener" href="https://github.com/JuneBlueberry/blog-post-code/tree/master/%E6%89%8B%E5%86%99Promise">源码</a>的GIT链接，欢迎指错和讨论</p>
-
+                <h3 id="1、JS-的数据类型有几种？"><a href="#1、JS-的数据类型有几种？" class="headerlink" title="1、JS 的数据类型有几种？"></a>1、JS 的数据类型有几种？</h3><pre class="line-numbers language-html" data-language="html"><code class="language-html">简单(原始)数据类型：String、Number、Boolean、null、undefined、Symbol(ES2105引入)、BigInt(ES2020引入)
+复杂数据类型：object<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="2、JS的基本类型和引用类型有哪些呢？"><a href="#2、JS的基本类型和引用类型有哪些呢？" class="headerlink" title="2、JS的基本类型和引用类型有哪些呢？"></a>2、JS的基本类型和引用类型有哪些呢？</h3><pre class="line-numbers language-html" data-language="html"><code class="language-html">基本类型(单类型)：String、Number、boolean、null、undefined、Symbol(ES2105引入), BigInt(ES2020引入)
+引用类型：object。里面包含的 function、Array、Date。	<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="3、以下-typeof-分别输出什么"><a href="#3、以下-typeof-分别输出什么" class="headerlink" title="3、以下 typeof 分别输出什么"></a>3、以下 typeof 分别输出什么</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">typeof</span> <span class="token number">123</span>            <span class="token comment">//numer</span>
+<span class="token keyword">typeof</span> <span class="token string">'123'</span>          <span class="token comment">//string</span>
+<span class="token keyword">typeof</span> <span class="token boolean">true</span>           <span class="token comment">//boolean</span>
+<span class="token keyword">typeof</span> <span class="token keyword">null</span>           <span class="token comment">//object</span>
+<span class="token keyword">typeof</span> <span class="token keyword">undefined</span>      <span class="token comment">//undefined</span>
+<span class="token keyword">typeof</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token punctuation">)</span>       <span class="token comment">//symbol</span>
+<span class="token keyword">typeof</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>             <span class="token comment">//object</span>
+<span class="token keyword">typeof</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>             <span class="token comment">//object</span>
+<span class="token keyword">typeof</span> console        <span class="token comment">//object</span>
+<span class="token keyword">typeof</span> console<span class="token punctuation">.</span>log    <span class="token comment">//function</span>
+<span class="token keyword">typeof</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>   <span class="token comment">//function</span>
+<span class="token keyword">typeof</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span>     <span class="token comment">//object</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="4、以下-Object-prototype-toString-call-分别输出什么"><a href="#4、以下-Object-prototype-toString-call-分别输出什么" class="headerlink" title="4、以下 Object.prototype.toString.call() 分别输出什么"></a>4、以下 Object.prototype.toString.call() 分别输出什么</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token number">123</span><span class="token punctuation">)</span>             <span class="token comment">// [object Number]</span>
+<span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token string">'123'</span><span class="token punctuation">)</span>           <span class="token comment">// [object String]</span>
+<span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span>            <span class="token comment">// [object Boolean]</span>
+<span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span>            <span class="token comment">// [object Null]</span>
+<span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">undefined</span><span class="token punctuation">)</span>       <span class="token comment">// [object Undefined]</span>
+<span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>        <span class="token comment">// [object Symbol]</span>
+<span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>              <span class="token comment">// [object Array]</span>
+<span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>              <span class="token comment">// [object Object]</span>
+<span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>console<span class="token punctuation">)</span>         <span class="token comment">// [object Object]</span>
+<span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>console<span class="token punctuation">.</span>log<span class="token punctuation">)</span>     <span class="token comment">// [object Function]</span>
+<span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>    <span class="token comment">// [object Function]</span>
+<span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>      <span class="token comment">// [object Date]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -519,7 +509,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://juneblueberry.github.io/2021/02/08/ES6/%E6%89%8B%E5%86%99Promise/%E6%89%8B%E5%86%99Promise(4)--%E5%AE%9E%E7%8E%B0Promise.prototype.catch()%E5%92%8Cfinally()/">http://juneblueberry.github.io/2021/02/08/ES6/%E6%89%8B%E5%86%99Promise/%E6%89%8B%E5%86%99Promise(4)--%E5%AE%9E%E7%8E%B0Promise.prototype.catch()%E5%92%8Cfinally()/</a>
+                    <a href="http://juneblueberry.github.io/2021/03/12/%E9%9D%A2%E8%AF%95%E9%A2%98/%E5%89%8D%E7%AB%AF/2021%E5%B9%B43%E6%9C%88/">http://juneblueberry.github.io/2021/03/12/%E9%9D%A2%E8%AF%95%E9%A2%98/%E5%89%8D%E7%AB%AF/2021%E5%B9%B43%E6%9C%88/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -557,8 +547,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Promise/">
-                                    <span class="chip bg-color">Promise</span>
+                                <a href="/tags/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/">
+                                    <span class="chip bg-color">前端面试题</span>
                                 </a>
                             
                         </div>
@@ -602,17 +592,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/02/09/ES6/%E6%89%8B%E5%86%99Promise/%E6%89%8B%E5%86%99Promise(5)--%E5%AE%9E%E7%8E%B0Promise.all()%E5%92%8CPromise.race()/">
+                <a href="/2021/03/12/%E9%9D%A2%E8%AF%95%E9%A2%98/%E5%89%8D%E7%AB%AF/2021%E5%B9%B43%E6%9C%88/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="手写Promise(5)--实现Promise.all()和Promise.race()">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="前端面试题总结--2021年3月">
                         
-                        <span class="card-title">手写Promise(5)--实现Promise.all()和Promise.race()</span>
+                        <span class="card-title">前端面试题总结--2021年3月</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -622,26 +613,27 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-09
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/ES6/" class="post-category">
-                                    ES6
+                            <a href="/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/" class="post-category">
+                                    面试题
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Promise/">
-                        <span class="chip bg-color">Promise</span>
+                    <a href="/tags/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/">
+                        <span class="chip bg-color">前端面试题</span>
                     </a>
                     
                 </div>
@@ -655,13 +647,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/02/04/ES6/%E6%89%8B%E5%86%99Promise/%E6%89%8B%E5%86%99Promise(3)--%E5%AE%9E%E7%8E%B0Promise.resolve()%E5%92%8CPromise.reject()/">
+                <a href="/2021/03/01/Vue/UI%E7%BB%84%E4%BB%B6/%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AAVue3UI%E7%BB%84%E4%BB%B6%E5%BA%93/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="手写Promise(3)--实现Promise.resolve()和Promise.reject()">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="搭建一个Vue3UI组件库">
                         
-                        <span class="card-title">手写Promise(3)--实现Promise.resolve()和Promise.reject()</span>
+                        <span class="card-title">搭建一个Vue3UI组件库</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -672,14 +664,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-01
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/ES6/" class="post-category">
-                                    ES6
+                            <a href="/categories/Vue/" class="post-category">
+                                    Vue
                                 </a>
                             
                             
@@ -689,8 +681,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Promise/">
-                        <span class="chip bg-color">Promise</span>
+                    <a href="/tags/UI%E7%BB%84%E4%BB%B6/">
+                        <span class="chip bg-color">UI组件</span>
                     </a>
                     
                 </div>
