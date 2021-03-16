@@ -1,0 +1,47 @@
+---
+title: JS判断一个对象是否为空对象
+date: 2021/3/16 10:00:00
+categories: 
+- JavaScript
+tags: 
+- JavaScript
+comments: true
+top: false
+cover: false
+keywords: JavaScript JS
+---
+
+### 1、JSON.stringify()
+将对象转成字符串进行比较
+```javascript
+let obj = {}
+JSON.stringify(obj) === '{}'   //true
+```
+
+### 2、for...in 循环
+```javascript
+function isObj(obj){
+  for (let key in obj) {
+    return false
+  }
+  return true
+}
+
+isObj({})	//true
+```
+
+### 3、Object.getOwnPropertyNames()
+此方法返回一个由指定对象的所有自身属性的属性名（包括不可枚举属性但不包括Symbol值作为名称的属性）组成的数组。
+```javascript
+let obj = {}
+Object.keys(obj).length === 0  //true
+```
+
+> 注意：Object.getOwnPropertyNames()不兼容IE8及以下
+
+### 4、Object.keys()
+Object.keys()是ES6的新方法，和第3点返回值一样
+```javascript
+let obj = {}
+Object.getOwnPropertyNames(obj).length === 0	//true
+```
