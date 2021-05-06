@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: JuneBlueberry's Blog
+#title: Blueberry's Blog
 subtitle: ''
 description: ''
 keywords:
-author: June Blueberry
+author: Blueberry
 language: zh-CN
 timezone: ''
 
@@ -95,12 +95,27 @@ include:
 exclude:
 ignore:
 
-# Extensions
-## Plugins: https://hexo.io/plugins/
-## Themes: https://hexo.io/themes/
-theme: matery #'chic'
+theme: blueberry
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+######### blueberry #####################
+
+#menu
+title: 大前端面试题库
+aomori_logo_typed_animated: true
+aomori_copyright: true
+aomori_logo: /images/avatar.jpg
+aomori_menu:
+  Home: /
+aomori_busuanzi: true
+aomori_social:
+  -
+    icon: github # 图标 name 字段
+    type: logo # 图标 type 字段
+    url: https://github.com/JuneBlueberry/blog-post-code # 你的社交媒体链接
+
+#########################################

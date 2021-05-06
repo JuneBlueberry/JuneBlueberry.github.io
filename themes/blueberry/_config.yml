@@ -1,0 +1,7 @@
+version: 1619416789282
+language: cn
+aomori_widgets:
+  - category
+  - tag
+
+#layout: tweet
