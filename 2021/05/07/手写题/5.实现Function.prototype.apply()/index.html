@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     
-    <title>2.用CSS画出圆、半圆、椭圆 | 大前端面试题库</title>
+    <title>5.实现Function.prototype.apply() | 大前端面试题库</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     
@@ -103,7 +103,7 @@
             <section class="inner">
                 <section class="inner-main">
                     <div class="post">
-    <article id="post-ckodr64250003zasr84yd4yje" class="article article-type-post" itemscope
+    <article id="post-ckodr642c000azasrc89r5sgh" class="article article-type-post" itemscope
     itemprop="blogPost">
 
     <div class="article-inner">
@@ -119,7 +119,7 @@
             
   
     <h1 class="article-title" itemprop="name">
-      2.用CSS画出圆、半圆、椭圆
+      5.实现Function.prototype.apply()
     </h1>
   
 
@@ -129,18 +129,18 @@
         <div class="article-more-info article-more-info-post hairline">
 
             <div class="article-date">
-  <time datetime="2021-05-07T10:30:00.000Z" itemprop="datePublished">2021-05-07</time>
+  <time datetime="2021-05-07T11:14:00.000Z" itemprop="datePublished">2021-05-07</time>
 </div>
 
             
             <div class="article-category">
-                <a class="article-category-link" href="/categories/%E4%BB%A3%E7%A0%81%E9%A2%98/">代码题</a>
+                <a class="article-category-link" href="/categories/%E6%89%8B%E5%86%99%E9%A2%98/">手写题</a>
             </div>
             
 
             
             <div class="article-tag">
-                <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li></ul>
+                <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
             </div>
             
 
@@ -153,28 +153,32 @@
         </div>
 
         <div class="article-entry post-inner-html hairline" itemprop="articleBody">
-            <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>round<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>圆<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>semicircle<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>半圆<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>oval<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>椭圆<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.round, .semicircle, .oval</span> <span class="token punctuation">&#123;</span>
-  <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> 
-  <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
-  <span class="token property">border</span><span class="token punctuation">:</span> 1px solid gray<span class="token punctuation">;</span>
-  <span class="token property">margin</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+            <p>apply()和call()使用一样，只是传入的参数是一个数组</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token class-name">Function</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">myapply</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">context</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">let</span> _context <span class="token operator">=</span> context <span class="token operator">||</span> window
+
+  _context<span class="token punctuation">.</span>fn <span class="token operator">=</span> <span class="token keyword">this</span>
+  <span class="token keyword">let</span> result <span class="token operator">=</span> _context<span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token punctuation">(</span>arguments<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token keyword">delete</span> _context<span class="token punctuation">.</span>fn
+
+  <span class="token keyword">return</span> result
 <span class="token punctuation">&#125;</span>
-<span class="token selector">.round</span> <span class="token punctuation">&#123;</span>
-  <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> value <span class="token operator">=</span> <span class="token number">2</span>    <span class="token comment">//window.value = 2</span>
+<span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  value<span class="token operator">:</span> <span class="token number">1</span>
 <span class="token punctuation">&#125;</span>
-<span class="token selector">.semicircle</span> <span class="token punctuation">&#123;</span>
-  <span class="token property">height</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
-  <span class="token property">border-radius</span><span class="token punctuation">:</span> 50px 50px 0 0<span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">demo</span><span class="token punctuation">(</span><span class="token parameter">s1<span class="token punctuation">,</span> s2</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>s1<span class="token punctuation">,</span> s2<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+    value<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>value
+  <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span>
-<span class="token selector">.oval</span> <span class="token punctuation">&#123;</span>
-  <span class="token property">height</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
-  <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+demo<span class="token punctuation">.</span><span class="token function">myapply</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span>    <span class="token comment">// 2 undefined undefined</span>
+<span class="token keyword">let</span> result <span class="token operator">=</span> demo<span class="token punctuation">.</span><span class="token function">myapply</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'hello'</span><span class="token punctuation">,</span> <span class="token string">'apply'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// 1 hello apply</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>   <span class="token comment">//    &#123;value: 1&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
         </div>
 
     </div>
@@ -198,19 +202,19 @@
     
 <nav class="article-nav">
   
-    <a href="/2021/05/07/%E6%89%8B%E5%86%99%E9%A2%98/3.%E5%AE%9E%E7%8E%B0JS%E6%B7%B1%E6%8B%B7%E8%B4%9D/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/05/07/%E9%97%AE%E7%AD%94%E9%A2%98/6.JS%E6%9C%89%E5%93%AA%E5%87%A0%E7%A7%8D%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" id="article-nav-newer" class="article-nav-link-wrap">
       <div class="article-nav-caption">下一题</div>
       <div class="article-nav-title">
         
-          3.实现JS深拷贝
+          6.JS有哪几种数据类型
         
       </div>
     </a>
   
   
-    <a href="/2021/05/07/%E4%BB%A3%E7%A0%81%E9%A2%98/1.%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2021/05/07/%E6%89%8B%E5%86%99%E9%A2%98/4.%E5%AE%9E%E7%8E%B0Function.prototype.call()/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-caption">上一题</div>
-      <div class="article-nav-title">1.判断一个对象是否为空对象</div>
+      <div class="article-nav-title">4.实现Function.prototype.call()</div>
     </a>
   
 </nav>
