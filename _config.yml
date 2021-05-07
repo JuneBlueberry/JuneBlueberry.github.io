@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-#title: Blueberry's Blog
-subtitle: ''
-description: ''
-keywords:
+title: 大前端面试题库
+subtitle: 
+description: 大前端面试题库，最新最全的前端面试题
+keywords: 大前端 面试题
 author: Blueberry
 language: zh-CN
 timezone: ''
@@ -105,7 +105,6 @@ deploy:
 ######### blueberry #####################
 
 #menu
-title: 大前端面试题库
 aomori_logo_typed_animated: true
 aomori_copyright: true
 aomori_logo: /images/avatar.jpg
