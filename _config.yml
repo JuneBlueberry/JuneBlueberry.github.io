@@ -4,12 +4,11 @@
 
 # Site
 title: 大前端面试题库
-subtitle: 
 description: 大前端面试题库，最新最全的前端面试题
 keywords: 大前端 面试题
 author: Blueberry
 language: zh-CN
-timezone: ''
+favicon: /images/avatar.jpg
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
