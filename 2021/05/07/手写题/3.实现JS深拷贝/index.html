@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     
-    <title>1.判断一个对象是否为空对象 | 大前端面试题库</title>
+    <title>3.实现JS深拷贝 | 大前端面试题库</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     
@@ -103,7 +103,7 @@
             <section class="inner">
                 <section class="inner-main">
                     <div class="post">
-    <article id="post-ckodqjqhw0001z7w9gsdcebmr" class="article article-type-post" itemscope
+    <article id="post-ckodqjqi40007z7w9adiw72hk" class="article article-type-post" itemscope
     itemprop="blogPost">
 
     <div class="article-inner">
@@ -119,7 +119,7 @@
             
   
     <h1 class="article-title" itemprop="name">
-      1.判断一个对象是否为空对象
+      3.实现JS深拷贝
     </h1>
   
 
@@ -129,18 +129,18 @@
         <div class="article-more-info article-more-info-post hairline">
 
             <div class="article-date">
-  <time datetime="2021-05-07T10:24:00.000Z" itemprop="datePublished">2021-05-07</time>
+  <time datetime="2021-05-07T10:55:00.000Z" itemprop="datePublished">2021-05-07</time>
 </div>
 
             
             <div class="article-category">
-                <a class="article-category-link" href="/categories/%E4%BB%A3%E7%A0%81%E9%A2%98/">代码题</a>
+                <a class="article-category-link" href="/categories/%E6%89%8B%E5%86%99%E9%A2%98/">手写题</a>
             </div>
             
 
             
             <div class="article-tag">
-                <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AF%B9%E8%B1%A1/" rel="tag">对象</a></li></ul>
+                <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E7%BB%84/" rel="tag">数组</a></li></ul>
             </div>
             
 
@@ -154,29 +154,27 @@
 
         <div class="article-entry post-inner-html hairline" itemprop="articleBody">
             <ul>
-<li><h4 id="1、JSON-stringify"><a href="#1、JSON-stringify" class="headerlink" title="1、JSON.stringify()"></a>1、JSON.stringify()</h4><p>将对象转成字符串进行比较</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
-<span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'&#123;&#125;'</span>   <span class="token comment">//true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
-<li><h4 id="2、for…in-循环"><a href="#2、for…in-循环" class="headerlink" title="2、for…in 循环"></a>2、for…in 循环</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">isObj</span><span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> key <span class="token keyword">in</span> obj<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">return</span> <span class="token boolean">false</span>
-  <span class="token punctuation">&#125;</span>
-  <span class="token keyword">return</span> <span class="token boolean">true</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token function">isObj</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>	<span class="token comment">//true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><h4 id="3、Object-getOwnPropertyNames"><a href="#3、Object-getOwnPropertyNames" class="headerlink" title="3、Object.getOwnPropertyNames()"></a>3、Object.getOwnPropertyNames()</h4><p>此方法返回一个由指定对象的所有自身属性的属性名（包括不可枚举属性但不包括Symbol值作为名称的属性）组成的数组。</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
-Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span>  <span class="token comment">//true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<blockquote>
-<p>注意：Object.getOwnPropertyNames()不兼容IE8及以下</p>
-</blockquote>
-</li>
-<li><h4 id="4、Object-keys"><a href="#4、Object-keys" class="headerlink" title="4、Object.keys()"></a>4、Object.keys()</h4><p>Object.keys()是ES6的新方法，和第3点返回值一样</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
-Object<span class="token punctuation">.</span><span class="token function">getOwnPropertyNames</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span>	<span class="token comment">//true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><h3 id="方法1、JSON-parse-JSON-stringify"><a href="#方法1、JSON-parse-JSON-stringify" class="headerlink" title="方法1、JSON.parse() + JSON.stringify()"></a>方法1、JSON.parse() + JSON.stringify()</h3></li>
 </ul>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">depthCopy</span><span class="token punctuation">(</span><span class="token parameter">objs</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  <span class="token keyword">return</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>objs<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><h3 id="方法2、遍历-递归"><a href="#方法2、遍历-递归" class="headerlink" title="方法2、遍历 + 递归"></a>方法2、遍历 + 递归</h3></li>
+</ul>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">depthCopy</span><span class="token punctuation">(</span><span class="token parameter">objs</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  <span class="token keyword">let</span> result <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
 
+  <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> objs <span class="token operator">===</span> <span class="token string">'object'</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> obj <span class="token keyword">in</span> objs<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      result<span class="token punctuation">[</span>obj<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">typeof</span> objs<span class="token punctuation">[</span>obj<span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token string">'object'</span> <span class="token operator">?</span> <span class="token function">depthCopy</span><span class="token punctuation">(</span>objs<span class="token punctuation">[</span>obj<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">:</span> objs<span class="token punctuation">[</span>obj<span class="token punctuation">]</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+    result <span class="token operator">=</span> objs
+  <span class="token punctuation">&#125;</span>
+
+  <span class="token keyword">return</span> result
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
         </div>
 
     </div>
@@ -200,19 +198,10 @@ Object<span class="token punctuation">.</span><span class="token function">getOw
     
 <nav class="article-nav">
   
-    <a href="/2021/05/07/%E4%BB%A3%E7%A0%81%E9%A2%98/2.%E7%94%A8CSS%E7%94%BB%E5%87%BA%E5%9C%86%E3%80%81%E5%8D%8A%E5%9C%86%E3%80%81%E6%A4%AD%E5%9C%86/" id="article-nav-newer" class="article-nav-link-wrap">
-      <div class="article-nav-caption">下一题</div>
-      <div class="article-nav-title">
-        
-          2.用CSS画出圆、半圆、椭圆
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/05/07/%E6%89%8B%E5%86%99%E9%A2%98/4.%E5%AE%9E%E7%8E%B0Function.prototype.call()/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2021/05/07/%E4%BB%A3%E7%A0%81%E9%A2%98/2.%E7%94%A8CSS%E7%94%BB%E5%87%BA%E5%9C%86%E3%80%81%E5%8D%8A%E5%9C%86%E3%80%81%E6%A4%AD%E5%9C%86/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-caption">上一题</div>
-      <div class="article-nav-title">4.实现Function.prototype.call()</div>
+      <div class="article-nav-title">2.用CSS画出圆、半圆、椭圆</div>
     </a>
   
 </nav>
