@@ -116,6 +116,6 @@ aomori_social:
   -
     icon: github # 图标 name 字段
     type: logo # 图标 type 字段
-    url: https://github.com/JuneBlueberry/blog-post-code # 你的社交媒体链接
+    url: https://github.com/JuneBlueberry/blog-post-code # 链接
 
 #########################################
