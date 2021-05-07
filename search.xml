@@ -4,23 +4,50 @@
   
     
     <entry>
-      <title>demo</title>
-      <link href="2021/01/31/%E9%97%AE%E7%AD%94%E9%A2%98/demo/"/>
-      <url>2021/01/31/%E9%97%AE%E7%AD%94%E9%A2%98/demo/</url>
+      <title>1.判断一个对象是否为空对象</title>
+      <link href="2021/05/07/%E4%BB%A3%E7%A0%81%E9%A2%98/1.%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1/"/>
+      <url>2021/05/07/%E4%BB%A3%E7%A0%81%E9%A2%98/1.%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<ul><li><h4 id="1、JSON-stringify"><a href="#1、JSON-stringify" class="headerlink" title="1、JSON.stringify()"></a>1、JSON.stringify()</h4><p>将对象转成字符串进行比较</p><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'&#123;&#125;'</span>   <span class="token comment">//true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li><li><h4 id="2、for…in-循环"><a href="#2、for…in-循环" class="headerlink" title="2、for…in 循环"></a>2、for…in 循环</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">isObj</span><span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> key <span class="token keyword">in</span> obj<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>    <span class="token keyword">return</span> <span class="token boolean">false</span>  <span class="token punctuation">&#125;</span>  <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">&#125;</span><span class="token function">isObj</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token comment">//true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li><li><h4 id="3、Object-getOwnPropertyNames"><a href="#3、Object-getOwnPropertyNames" class="headerlink" title="3、Object.getOwnPropertyNames()"></a>3、Object.getOwnPropertyNames()</h4><p>此方法返回一个由指定对象的所有自身属性的属性名（包括不可枚举属性但不包括Symbol值作为名称的属性）组成的数组。</p><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span>  <span class="token comment">//true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><blockquote><p>注意：Object.getOwnPropertyNames()不兼容IE8及以下</p></blockquote></li><li><h4 id="4、Object-keys"><a href="#4、Object-keys" class="headerlink" title="4、Object.keys()"></a>4、Object.keys()</h4><p>Object.keys()是ES6的新方法，和第3点返回值一样</p><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>Object<span class="token punctuation">.</span><span class="token function">getOwnPropertyNames</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span><span class="token comment">//true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li></ul>]]></content>
       
       
       <categories>
           
-          <category> 问答题 </category>
+          <category> 代码题 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> HTML </tag>
+            <tag> JavaScript </tag>
+            
+            <tag> Array </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>2.用CSS画出圆、半圆、椭圆</title>
+      <link href="2021/05/07/%E4%BB%A3%E7%A0%81%E9%A2%98/2.%E7%94%A8CSS%E7%94%BB%E5%87%BA%E5%9C%86%E3%80%81%E5%8D%8A%E5%9C%86%E3%80%81%E6%A4%AD%E5%9C%86/"/>
+      <url>2021/05/07/%E4%BB%A3%E7%A0%81%E9%A2%98/2.%E7%94%A8CSS%E7%94%BB%E5%87%BA%E5%9C%86%E3%80%81%E5%8D%8A%E5%9C%86%E3%80%81%E6%A4%AD%E5%9C%86/</url>
+      
+        <content type="html"><![CDATA[<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>round<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>圆<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>semicircle<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>半圆<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>oval<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>椭圆<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.round, .semicircle, .oval</span> <span class="token punctuation">&#123;</span>  <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>   <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>  <span class="token property">border</span><span class="token punctuation">:</span> 1px solid gray<span class="token punctuation">;</span>  <span class="token property">margin</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span><span class="token punctuation">&#125;</span><span class="token selector">.round</span> <span class="token punctuation">&#123;</span>  <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span><span class="token punctuation">&#125;</span><span class="token selector">.semicircle</span> <span class="token punctuation">&#123;</span>  <span class="token property">height</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>  <span class="token property">border-radius</span><span class="token punctuation">:</span> 50px 50px 0 0<span class="token punctuation">;</span><span class="token punctuation">&#125;</span><span class="token selector">.oval</span> <span class="token punctuation">&#123;</span>  <span class="token property">height</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>  <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 代码题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CSS </tag>
             
         </tags>
       
