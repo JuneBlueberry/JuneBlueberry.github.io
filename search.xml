@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>25.width的auto和100的区别</title>
+      <link href="2021/05/07/%E9%97%AE%E7%AD%94%E9%A2%98/25.width%E7%9A%84auto%E5%92%8C100%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+      <url>2021/05/07/%E9%97%AE%E7%AD%94%E9%A2%98/25.width%E7%9A%84auto%E5%92%8C100%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+      
+        <content type="html"><![CDATA[<ul><li>width:100%会使元素box的宽度等于父元素的content box的宽度。</li><li>width:auto会使元素撑满整个父元素，margin、border、padding、content区域会自动分配水平空间。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 问答题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CSS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>24.为什么要初始化 CSS 样式</title>
+      <link href="2021/05/07/%E9%97%AE%E7%AD%94%E9%A2%98/24.%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%88%9D%E5%A7%8B%E5%8C%96%20CSS%20%E6%A0%B7%E5%BC%8F/"/>
+      <url>2021/05/07/%E9%97%AE%E7%AD%94%E9%A2%98/24.%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%88%9D%E5%A7%8B%E5%8C%96%20CSS%20%E6%A0%B7%E5%BC%8F/</url>
+      
+        <content type="html"><![CDATA[<p>因为浏览器的兼容问题，不同浏览器对有些标签的默认值是不同的，如果没对CSS初始化往往会出现浏览器之间的页面显示差异。<br>当然，初始化样式会对SEO有一定的影响，但鱼和熊掌不可兼得，但力求影响最小的情况下初始化。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 问答题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CSS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>23.实现div水平垂直居中</title>
       <link href="2021/05/07/%E4%BB%A3%E7%A0%81%E9%A2%98/23.%E5%AE%9E%E7%8E%B0div%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/"/>
       <url>2021/05/07/%E4%BB%A3%E7%A0%81%E9%A2%98/23.%E5%AE%9E%E7%8E%B0div%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/</url>
