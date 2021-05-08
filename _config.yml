@@ -6,7 +6,7 @@
 title: 大前端面试题库
 description: 大前端面试题库，最新最全的前端面试题
 keywords: 大前端 面试题
-author: Blueberry
+author: blueberry
 language: zh-CN
 favicon: /images/avatar.jpg
 
@@ -110,6 +110,7 @@ aomori_logo: /images/avatar.jpg
 aomori_menu:
   Home: /
 aomori_busuanzi: true
+aomori_post_author: true
 aomori_social:
   -
     icon: github # 图标 name 字段
