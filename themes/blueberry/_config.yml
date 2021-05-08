@@ -3,5 +3,19 @@ language: cn
 aomori_widgets:
   - category
   - tag
+  - joinuser
 
-#layout: tweet
+#me
+me_avatar: /images/avatar.jpg
+me_name: blueberry
+
+#joinuser
+joinuser_list:
+  - 
+    name: blueberry
+    logo: /images/avatar.jpg
+    url: https://github.com/JuneBlueberry
+  # - 
+  #   name: blueberry
+  #   logo: /images/avatar.jpg
+  #   url: https://github.com/JuneBlueberry
