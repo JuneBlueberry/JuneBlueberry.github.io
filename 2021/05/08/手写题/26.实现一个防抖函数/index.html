@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     
-    <title>22.CSS 优先级算法如何计算 | 大前端面试题库</title>
+    <title>26.实现一个防抖函数 | 大前端面试题库</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="description" content="大前端面试题库，最新最全的前端面试题"/>
@@ -110,7 +110,7 @@
             <section class="inner">
                 <section class="inner-main">
                     <div class="post">
-    <article id="post-ckofmojx9001szgwramie1qfa" class="article article-type-post" itemscope
+    <article id="post-ckofmojwe0009zgwr0g0l6c12" class="article article-type-post" itemscope
     itemprop="blogPost">
 
     <div class="article-inner">
@@ -126,7 +126,7 @@
             
   
     <h1 class="article-title" itemprop="name">
-      22.CSS 优先级算法如何计算
+      26.实现一个防抖函数
     </h1>
   
 
@@ -136,7 +136,7 @@
         <div class="article-more-info article-more-info-post hairline">
 
             <div class="article-date">
-  <time datetime="2021-05-07T18:09:00.000Z" itemprop="datePublished">2021-05-07</time>
+  <time datetime="2021-05-08T18:44:00.000Z" itemprop="datePublished">2021-05-08</time>
 </div>
 
             
@@ -147,13 +147,13 @@
 
             
             <div class="article-category">
-                <a class="article-category-link" href="/categories/%E9%97%AE%E7%AD%94%E9%A2%98/">问答题</a>
+                <a class="article-category-link" href="/categories/%E6%89%8B%E5%86%99%E9%A2%98/">手写题</a>
             </div>
             
 
             
             <div class="article-tag">
-                <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li></ul>
+                <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
             </div>
             
 
@@ -166,20 +166,15 @@
         </div>
 
         <div class="article-entry post-inner-html hairline" itemprop="articleBody">
-            <p>CSS的优先级是根据样式声明的特殊性值来判断的。选择器的特殊性值分为四个等级，如下：</p>
-<ul>
-<li>标签内选择符 x,0,0,0</li>
-<li>ID选择符 0,x,0,0</li>
-<li>class选择符/属性选择符/伪类选择符    0,0,x,0</li>
-<li>标签元素和伪元素选择符 0,0,0,x</li>
-</ul>
-<p>以下不在特殊性中</p>
-<ul>
-<li>!important为权重，可以理解为1,0,0,0,0</li>
-<li>通用选择器(*)，子选择器(&gt;)，和相邻同胞选择器(+)，可以理解为 0,0,0,0</li>
-</ul>
-<p>因此顺序：!important &gt; 行内样式 &gt; ID选择器 &gt; 类选择器 = 属性选择器 = 伪类选择器 &gt; 标签选择器 = 伪元素选择器 &gt; 通配符 &gt; 继承 &gt; 浏览器默认样式</p>
-
+            <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">debounce</span><span class="token punctuation">(</span><span class="token parameter">fn<span class="token punctuation">,</span> time</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  <span class="token keyword">let</span> timeout <span class="token operator">=</span> <span class="token keyword">null</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>timeout<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+      <span class="token function">clearTimeout</span><span class="token punctuation">(</span>timeout<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+    timeout <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>fn<span class="token punctuation">,</span> time<span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
         </div>
 
     </div>
@@ -203,19 +198,19 @@
     
 <nav class="article-nav">
   
-    <a href="/2021/05/07/%E4%BB%A3%E7%A0%81%E9%A2%98/23.%E5%AE%9E%E7%8E%B0div%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/05/08/%E6%89%8B%E5%86%99%E9%A2%98/27.%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E8%8A%82%E6%B5%81%E5%87%BD%E6%95%B0/" id="article-nav-newer" class="article-nav-link-wrap">
       <div class="article-nav-caption">下一题</div>
       <div class="article-nav-title">
         
-          23.实现div水平垂直居中
+          27.实现一个节流函数
         
       </div>
     </a>
   
   
-    <a href="/2021/05/07/%E9%97%AE%E7%AD%94%E9%A2%98/21.CSS%20%E4%B8%AD%E5%93%AA%E4%BA%9B%E5%B1%9E%E6%80%A7%E5%8F%AF%E4%BB%A5%E7%BB%A7%E6%89%BF/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2021/05/07/%E9%97%AE%E7%AD%94%E9%A2%98/25.width%E7%9A%84auto%E5%92%8C100%E7%9A%84%E5%8C%BA%E5%88%AB/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-caption">上一题</div>
-      <div class="article-nav-title">21.CSS 中哪些属性可以继承</div>
+      <div class="article-nav-title">25.width的auto和100的区别</div>
     </a>
   
 </nav>
