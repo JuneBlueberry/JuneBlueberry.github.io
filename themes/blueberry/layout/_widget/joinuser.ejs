@@ -2,10 +2,16 @@
   <div class="widget-title"><span>Join</span></div>
   <div class="widget-inner">
     <% theme.joinuser_list.forEach(function(user){ %>
-      <div style="display: flex;margin: 3px 0;">
-        <img src="<%= user.logo %>" style="width: 24px;height: 24px;display: block;margin-right: 6px;border-radius: 50% 50%;" />
-        <a href="<%= user.url %>"><span style="line-height: 24px;"><%- user.name %></span></a>
-      </div>
+      <% if(user.url){%>
+        <a href="<%= user.url %>">
+      <%} %>
+        <div style="display: flex;margin: 3px 0;">
+          <img src="<%= user.logo %>" style="width: 24px;height: 24px;display: block;margin-right: 6px;border-radius: 50% 50%;" />
+          <span style="line-height: 24px;"><%- user.name %></span>
+        </div>
+      <% if(user.url){%>
+        </a>
+      <%} %>
     <% }) %>
   </div>
 </div>
