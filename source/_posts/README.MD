@@ -5,7 +5,6 @@
 - [ ] 1px问题
 - [ ] keep-alive怎么使用
 - [ ] proxy的实际应用场景
-- [ ] webpack如何解析less和sass
 - [ ] js原型和原型链的理解
 - [ ] es5如何实现继承
 - [ ] class的super是做什么用的
@@ -50,3 +49,4 @@
 - 24.为什么要初始化 CSS 样式
 - 25.width的auto和100%的区别
 - 28.typeof和instanceof原理是什么
+- 29.webpack如何解析less和sass
