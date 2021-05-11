@@ -4,11 +4,36 @@
   
     
     <entry>
+      <title>28.typeof和instanceof原理是什么</title>
+      <link href="2021/05/11/%E9%97%AE%E7%AD%94%E9%A2%98/28.typeof%E5%92%8Cinstanceof%E5%8E%9F%E7%90%86%E6%98%AF%E4%BB%80%E4%B9%88/"/>
+      <url>2021/05/11/%E9%97%AE%E7%AD%94%E9%A2%98/28.typeof%E5%92%8Cinstanceof%E5%8E%9F%E7%90%86%E6%98%AF%E4%BB%80%E4%B9%88/</url>
+      
+        <content type="html"><![CDATA[<ul><li>typeof原理：js 在底层存储变量的时候，会在变量的机器码的低位1-3位存储其类型信息<ul><li>000：对象</li><li>010：浮点数</li><li>100：字符串</li><li>110：布尔</li><li>1：整数</li><li>null比较特殊，所有位数都是0的，所以会被误判断成null</li></ul></li><li>instanceof: 根据原型链查找，只要左边对象上能在右边的prototype上找到</li><li>因此typeof null结果为object, null instanceof object结果为null </li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 问答题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>27.实现一个节流函数</title>
       <link href="2021/05/08/%E6%89%8B%E5%86%99%E9%A2%98/27.%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E8%8A%82%E6%B5%81%E5%87%BD%E6%95%B0/"/>
       <url>2021/05/08/%E6%89%8B%E5%86%99%E9%A2%98/27.%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E8%8A%82%E6%B5%81%E5%87%BD%E6%95%B0/</url>
       
-        <content type="html"><![CDATA[<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">throttle</span><span class="token punctuation">(</span><span class="token parameter">fn<span class="token punctuation">,</span> time</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>  <span class="token keyword">let</span> timeout <span class="token operator">=</span> <span class="token boolean">true</span>  <span class="token comment">//是否运行调用</span>  <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>timeout<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>      <span class="token keyword">return</span>    <span class="token punctuation">&#125;</span>    timeout <span class="token operator">=</span> <span class="token boolean">false</span>    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>      <span class="token function">func</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> arguments<span class="token punctuation">)</span>      timeout <span class="token operator">=</span> <span class="token boolean">true</span>    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>  <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+        <content type="html"><![CDATA[<p>节流是间隔执行，函数节流即每隔一段时间就执行一次。<br>实现原理为设置一个定时器，约定xx毫秒后执行事件，如果时间到了，那么执行函数并重置定时器。<br>和防抖的区别在于，防抖每次触发事件都重置定时器，而节流在定时器到时间后再清空定时器。</p><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">throttle</span><span class="token punctuation">(</span><span class="token parameter">fn<span class="token punctuation">,</span> time</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>  <span class="token keyword">let</span> timeout <span class="token operator">=</span> <span class="token boolean">true</span>  <span class="token comment">//是否运行调用</span>  <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>timeout<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>      <span class="token keyword">return</span>    <span class="token punctuation">&#125;</span>    timeout <span class="token operator">=</span> <span class="token boolean">false</span>    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>      <span class="token function">func</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> arguments<span class="token punctuation">)</span>      timeout <span class="token operator">=</span> <span class="token boolean">true</span>    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>  <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
       
       
       <categories>
@@ -636,7 +661,7 @@
             
             <tag> JavaScript </tag>
             
-            <tag> 数组 </tag>
+            <tag> 对象 </tag>
             
         </tags>
       
