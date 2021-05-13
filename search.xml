@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>31.Js中==和===的区别</title>
+      <link href="2021/05/13/%E9%97%AE%E7%AD%94%E9%A2%98/31.Js%E4%B8%AD==%E5%92%8C===%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+      <url>2021/05/13/%E9%97%AE%E7%AD%94%E9%A2%98/31.Js%E4%B8%AD==%E5%92%8C===%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+      
+        <content type="html"><![CDATA[<ul><li>==表示抽象相等，两边值类型不同的时候，会先做隐式类型转换，再对值进行比较；</li><li>===表示严格相等，不会做类型转换，两边的类型不同一定不相等</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 问答题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>30.数组去重</title>
       <link href="2021/05/13/%E4%BB%A3%E7%A0%81%E9%A2%98/30.%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/"/>
       <url>2021/05/13/%E4%BB%A3%E7%A0%81%E9%A2%98/30.%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/</url>
