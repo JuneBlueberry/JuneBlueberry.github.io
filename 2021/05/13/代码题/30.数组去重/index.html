@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     
-    <title>25.width的auto和100的区别 | 大前端面试题库</title>
+    <title>30.数组去重 | 大前端面试题库</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="description" content="大前端面试题库，最新最全的前端面试题"/>
@@ -110,7 +110,7 @@
             <section class="inner">
                 <section class="inner-main">
                     <div class="post">
-    <article id="post-ckomm2wma0024zwq42y4ndj4z" class="article article-type-post" itemscope
+    <article id="post-ckomm2wlj0009zwq4e4u1gftg" class="article article-type-post" itemscope
     itemprop="blogPost">
 
     <div class="article-inner">
@@ -126,7 +126,7 @@
             
   
     <h1 class="article-title" itemprop="name">
-      25.width的auto和100的区别
+      30.数组去重
     </h1>
   
 
@@ -136,7 +136,7 @@
         <div class="article-more-info article-more-info-post hairline">
 
             <div class="article-date">
-  <time datetime="2021-05-07T20:55:00.000Z" itemprop="datePublished">2021-05-07</time>
+  <time datetime="2021-05-13T15:20:00.000Z" itemprop="datePublished">2021-05-13</time>
 </div>
 
             
@@ -147,13 +147,13 @@
 
             
             <div class="article-category">
-                <a class="article-category-link" href="/categories/%E9%97%AE%E7%AD%94%E9%A2%98/">问答题</a>
+                <a class="article-category-link" href="/categories/%E4%BB%A3%E7%A0%81%E9%A2%98/">代码题</a>
             </div>
             
 
             
             <div class="article-tag">
-                <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li></ul>
+                <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E7%BB%84/" rel="tag">数组</a></li></ul>
             </div>
             
 
@@ -166,11 +166,40 @@
         </div>
 
         <div class="article-entry post-inner-html hairline" itemprop="articleBody">
-            <ul>
-<li>width:100%会使元素box的宽度等于父元素的content box的宽度。</li>
-<li>width:auto会使元素撑满整个父元素，margin、border、padding、content区域会自动分配水平空间。</li>
+            <p>对一个数组去重，如下：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//去重前</span>
+<span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span>
+<span class="token comment">//去重后</span>
+<span class="token keyword">let</span> result <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>使用Set</li>
 </ul>
-
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">awswer_1</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  <span class="token keyword">return</span> Array<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>循环</li>
+</ul>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">awswer_2</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  <span class="token keyword">let</span> result <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> s <span class="token keyword">of</span> arr<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>result<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+      result<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token keyword">return</span> result
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>Array.reduce()</li>
+</ul>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">awswer_3</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  <span class="token keyword">return</span> arr<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">pre<span class="token punctuation">,</span> cur</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>pre<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span>cur<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+      pre<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>cur<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> pre
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
         </div>
 
     </div>
@@ -194,19 +223,10 @@
     
 <nav class="article-nav">
   
-    <a href="/2021/05/08/%E6%89%8B%E5%86%99%E9%A2%98/26.%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E9%98%B2%E6%8A%96%E5%87%BD%E6%95%B0/" id="article-nav-newer" class="article-nav-link-wrap">
-      <div class="article-nav-caption">下一题</div>
-      <div class="article-nav-title">
-        
-          26.实现一个防抖函数
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/05/07/%E9%97%AE%E7%AD%94%E9%A2%98/24.%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%88%9D%E5%A7%8B%E5%8C%96%20CSS%20%E6%A0%B7%E5%BC%8F/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2021/05/11/%E9%97%AE%E7%AD%94%E9%A2%98/29.webpack%E5%A6%82%E4%BD%95%E8%A7%A3%E6%9E%90less%E5%92%8Csass/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-caption">上一题</div>
-      <div class="article-nav-title">24.为什么要初始化 CSS 样式</div>
+      <div class="article-nav-title">29.webpack如何解析less和sass</div>
     </a>
   
 </nav>
