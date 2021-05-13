@@ -1,6 +1,6 @@
 > 网站: [JuneBlueberry](https://juneblueberry.github.io/)
 
-> 待归档题库
+> 未归档题库
 
 - [ ] 1px问题
 - [ ] keep-alive怎么使用
@@ -10,6 +10,9 @@
 - [ ] class的super是做什么用的
 - [ ] 如何在ES5环境下实现let
 - [ ] 如何在ES5环境下实现const
+
+> 待完善题库
+- [X] 30.数组去重
 
 > 已归档题库
 
@@ -26,6 +29,7 @@
 - 5.实现Function.prototype.apply()
 - 26.实现一个防抖函数
 - 27.实现一个节流函数
+- 30.数组去重
 
 #### 问答题
 
