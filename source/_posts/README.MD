@@ -1,6 +1,6 @@
-> 网站: [JuneBlueberry](https://juneblueberry.github.io/)
+> ## 网站: [JuneBlueberry](https://juneblueberry.github.io/)
 
-> 未归档题库
+> ## 未归档题库
 
 - [ ] 1px问题
 - [ ] keep-alive怎么使用
@@ -10,11 +10,13 @@
 - [ ] class的super是做什么用的
 - [ ] 如何在ES5环境下实现let
 - [ ] 如何在ES5环境下实现const
+- [ ] CSS3中transition和animation的属性分别有哪些
+- [ ] 实现一个函数判断数据类型
 
-> 待完善题库
+> ## 待完善题库
 - [X] 30.数组去重
 
-> 已归档题库
+> ## 已归档题库
 
 #### 代码题
 
