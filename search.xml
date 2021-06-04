@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>W24.Array.isArray(Array.prototype)返回什么</title>
+      <link href="2021/06/03/%E9%97%AE%E7%AD%94%E9%A2%98/W24.Array.isArray(Array.prototype)%E8%BF%94%E5%9B%9E%E4%BB%80%E4%B9%88/"/>
+      <url>2021/06/03/%E9%97%AE%E7%AD%94%E9%A2%98/W24.Array.isArray(Array.prototype)%E8%BF%94%E5%9B%9E%E4%BB%80%E4%B9%88/</url>
+      
+        <content type="html"><![CDATA[<p>Array.prototype 也是一个数组。这点在MDN文档中提到过</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 问答题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>W23.1px问题</title>
       <link href="2021/05/22/%E9%97%AE%E7%AD%94%E9%A2%98/W23.1px%E9%97%AE%E9%A2%98/"/>
       <url>2021/05/22/%E9%97%AE%E7%AD%94%E9%A2%98/W23.1px%E9%97%AE%E9%A2%98/</url>
@@ -15,14 +40,14 @@
           
           <category> 问答题 </category>
           
-          <category> CSS </category>
-          
       </categories>
       
       
         <tags>
             
             <tag> JavaScript </tag>
+            
+            <tag> CSS </tag>
             
         </tags>
       
