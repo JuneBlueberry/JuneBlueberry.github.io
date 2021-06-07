@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [1,2,3,[4,5,6,[7,[8],9]]]
+
+        // ES6 Array.prototype.flat()
+        function answer_1(arr){
+            return arr.flat(Infinity)
+        }
+
+        // JSON序列化 + 正则表达式
+        function answer_2(arr){
+            let str = JSON.stringify(arr).replace(/(\[|\])/g, '')
+            return JSON.parse(`[${str}]`)
+        }
+
+        // 递归 + concat()
+        function answer_3(arr){
+            let result = []
+            for (const item of arr) {
+                result = Array.isArray(item) ? result.concat(...answer_3(item)) : result.concat([item])
+            }
+            return result
+        }
+
+        // reduce() + concat()
+        function answer_4(arr){
+            return arr.reduce((pre, cur) => {
+                return Array.isArray(cur) ? pre.concat(...answer_3(cur)) : pre.concat([cur])
+            }, [])
+        }
+
+        // ...拓展运算符 + some()
+        function answer_5(arr){
+            while(arr.some(Array.isArray)){
+                arr = [].concat(...arr)
+            }
+            return arr
+        }
+    </script>
+</body>
+</html>
