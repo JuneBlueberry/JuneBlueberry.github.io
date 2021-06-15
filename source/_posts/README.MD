@@ -37,6 +37,7 @@
 - X3.实现Function.prototype.apply()
 - X4.实现一个防抖函数
 - X5.实现一个节流函数
+- X6.实现instanceOf
 
 #### 问答题
 
