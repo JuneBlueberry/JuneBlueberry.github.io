@@ -4,6 +4,58 @@
   
     
     <entry>
+      <title>X6.实现instanceOf</title>
+      <link href="2021/06/15/%E6%89%8B%E5%86%99%E9%A2%98/X6.%E5%AE%9E%E7%8E%B0instanceOf/"/>
+      <url>2021/06/15/%E6%89%8B%E5%86%99%E9%A2%98/X6.%E5%AE%9E%E7%8E%B0instanceOf/</url>
+      
+        <content type="html"><![CDATA[<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">instanceOf</span><span class="token punctuation">(</span><span class="token parameter">left<span class="token punctuation">,</span> right</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>  <span class="token keyword">let</span> left_proto <span class="token operator">=</span> left<span class="token punctuation">.</span>__proto__  <span class="token keyword">let</span> right_proto <span class="token operator">=</span> right<span class="token punctuation">.</span>prototype  <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>    <span class="token keyword">if</span><span class="token punctuation">(</span>left_proto <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span>    <span class="token keyword">if</span><span class="token punctuation">(</span>left_proto <span class="token operator">===</span> right_proto<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span>    left_proto <span class="token operator">=</span> left_proto<span class="token punctuation">.</span>__proto__  <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 手写题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>D8.实现[1,2,3,4,5].duplicator()</title>
+      <link href="2021/06/08/%E4%BB%A3%E7%A0%81%E9%A2%98/D8.%E5%AE%9E%E7%8E%B0%5B1,2,3,4,5%5D.duplicator()/"/>
+      <url>2021/06/08/%E4%BB%A3%E7%A0%81%E9%A2%98/D8.%E5%AE%9E%E7%8E%B0%5B1,2,3,4,5%5D.duplicator()/</url>
+      
+        <content type="html"><![CDATA[<ul><li>给数组的原型添加方法</li></ul><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">duplicator</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>arr<span class="token punctuation">.</span><span class="token function">duplicator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 代码题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> 数组 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>D7.JS数组扁平化</title>
       <link href="2021/06/07/%E4%BB%A3%E7%A0%81%E9%A2%98/D7.JS%E6%95%B0%E7%BB%84%E6%89%81%E5%B9%B3%E5%8C%96/"/>
       <url>2021/06/07/%E4%BB%A3%E7%A0%81%E9%A2%98/D7.JS%E6%95%B0%E7%BB%84%E6%89%81%E5%B9%B3%E5%8C%96/</url>
