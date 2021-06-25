@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Parent(){
+            this.name = 'zhangsan'
+            this.age = [18,20]
+        }
+        Parent.prototype.say = function(){
+            
+        }
+
+        function Child(){
+
+        }
+        Child.prototype = new Parent()
+        Child.prototype.constructor = Child
+
+        let child1 = new Child()
+        let child2 = new Child()
+
+        child1.name = 'lisi'    //child1:lisi, child2:zhangsan
+        child1.age = [30, 20]   //child1:[30,20], child2:[30,20]    引用类型会一起变化
+    </script>
+</body>
+</html>
