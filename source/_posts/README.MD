@@ -9,7 +9,7 @@
 - [ ] 如何在ES5环境下实现let
 - [ ] 如何在ES5环境下实现const
 - [ ] CSS3中transition和animation的属性分别有哪些
-- [ ] 实现Array.flat
+- [ ] 实现Array.prototype.flat
 
 > ## 待完善题库
 
@@ -65,3 +65,8 @@
 - W22.Js中==和===的区别
 - W23.1px问题
 - W24.Array.isArray(Array.prototype)返回什么
+
+
+#### 算法题
+
+- L1.两数相加
