@@ -15,7 +15,7 @@ joinuser_list:
     name: blueberry
     logo: /images/avatar_blueberry.jpg
     url: https://github.com/JuneBlueberry
-  - 
-    name: may
-    logo: /images/avatar_may.jpg
-    # url: https://github.com/JuneBlueberry
+  # - 
+  #   name: may
+  #   logo: /images/avatar_may.jpg
+  #   url: 

@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 大前端面试题库
-description: 大前端面试题库，最新最全的前端面试题
-keywords: 大前端 面试题
+title: 学习笔记
+description: 大前端学习笔记
+keywords: 大前端 题库 学习笔记
 author: blueberry
 language: zh-CN
 favicon: /images/avatar.jpg
@@ -26,6 +26,7 @@ public_dir: public
 tag_dir: tags
 archive_dir: archives
 category_dir: categories
+blog_dir: blogs
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
@@ -107,6 +108,16 @@ deploy:
 aomori_logo_typed_animated: true
 aomori_copyright: true
 aomori_logo: /images/avatar.jpg
+aomori_module:
+  - 
+    name: 知识题
+    path: /
+  # - 
+  #   name: 算法
+  #   path: /
+  - 
+    name: 文章
+    path: /blogs
 aomori_menu:
   Home: /
 aomori_busuanzi: true

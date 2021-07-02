@@ -22,6 +22,12 @@
             </div>
         </div>
         <div class="header-menu">
+            <div class="hearer-menu-module">
+                <!-- <% config.aomori_module %> -->
+                <% config.aomori_module.forEach((i) => { %>
+                    <a href="<%- url_for(i.path) %>"><%= i.name %></a>
+                <% }) %>
+            </div>
             <div class="header-menu-inner">
                 <% for (var i in config.aomori_menu){ %>
                 <a href="<%- url_for(config.aomori_menu[i]) %>"><%= i %></a>
