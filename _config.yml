@@ -117,7 +117,7 @@ aomori_module:
   #   path: /
   - 
     name: 文章
-    path: /blogs
+    path: /blog
 aomori_menu:
   Home: /
 aomori_busuanzi: true
